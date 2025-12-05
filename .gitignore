@@ -1,0 +1,63 @@
+# ===============================================
+# CRITICAL SAFETY IGNORES (Addressing past errors)
+# ===============================================
+# These rules explicitly ensure the bulky folders are always ignored.
+Library/
+/[Ll]ibrary/
+Temp/
+/[Tt]emp/
+
+# ===============================================
+# Unity Generated Folders & Files (Essential Ignores)
+# ===============================================
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+.asset_dependencies
+*.log
+*.pdata
+*.pidb
+*.pdb
+*.mdb
+/[Mm]emoryCaptures/
+
+# ===============================================
+# Project/Solution Files (IDE Ignores)
+# ===============================================
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.booproj
+*.svd
+.vs/
+.idea/
+.vscode/
+
+# ===============================================
+# Build Artifacts
+# ===============================================
+/[Ee]xport[eD]b[uU]ilt[pP]layers/
+/[Bb]ackups/
+*.apk
+*.aab
+
+# ===============================================
+# MacOS Files
+# ===============================================
+.DS_Store
+
+# ===============================================
+# Force Inclusion of Key Files (Exceptions)
+# ===============================================
+# NOTE: .meta files MUST be tracked for collaboration.
+!/[Aa]ssets/**/*.meta
+!/[Pp]ackages/**/*.meta
+!/[Pp]roject[Ss]ettings/**/*.meta
+!/[Gg]raphics[Ss]ettings.asset.meta
+!/[Ee]ditor[Ss]ettings.asset.meta

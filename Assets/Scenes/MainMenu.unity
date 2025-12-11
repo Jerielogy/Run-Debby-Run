@@ -2718,9 +2718,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 979078797}
   sfxSource: {fileID: 979078796}
-  backgroundMusic: {fileID: 8300000, guid: 545a46bc53578bf4387553787fe8980d, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 9e6e07d531f84614b938de7c4dd153ad, type: 3}
   jumpSound: {fileID: 8300000, guid: 61768a5565141254f83e1763490d6d4f, type: 3}
   crouchSound: {fileID: 8300000, guid: 4dbdd5f11e670a94d919b060aca3419e, type: 3}
+  dieSound: {fileID: 8300000, guid: f0606e2ad0997fa46ab2e4cd49bd7786, type: 3}
+  gameOverSound: {fileID: 8300000, guid: f07c2c4a474038b4bb85f44e803ab8c1, type: 3}
 --- !u!4 &979078799
 Transform:
   m_ObjectHideFlags: 0
@@ -2772,7 +2774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: -163}
   m_SizeDelta: {x: 120, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987868658
@@ -2844,7 +2846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4298,7 +4300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -80}
+  m_AnchoredPosition: {x: 0, y: -90}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621953189

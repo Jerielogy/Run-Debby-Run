@@ -2,39 +2,42 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance; // Singleton so we can call it from anywhere
+    public static AudioManager Instance;
 
     [Header("Audio Sources")]
-    public AudioSource musicSource; // For BGM (Loops)
-    public AudioSource sfxSource;   // For SFX (One-shot sounds)
+    public AudioSource musicSource; // For Background Music (Looping)
+    public AudioSource sfxSource;   // For Sound Effects (Jump, Die, etc.)
 
     [Header("Sound Clips")]
     public AudioClip backgroundMusic;
     public AudioClip jumpSound;
     public AudioClip crouchSound;
-
-    // You can add more later:
-    // public AudioClip scoreSound;
-    // public AudioClip crashSound;
+    public AudioClip dieSound;
+    public AudioClip gameOverSound;
 
     void Awake()
     {
-        // Singleton Setup (Like SceneTransitionManager)
+        // Singleton Pattern: Ensure only one Audio Manager exists
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Keep this alive across levels
+            DontDestroyOnLoad(gameObject); // Keep music playing when switching scenes
         }
         else
         {
-            Destroy(gameObject); // Destroy duplicate if we go back to menu
+            Destroy(gameObject); // Destroy duplicates if we reload the scene
         }
     }
 
     void Start()
     {
-        // Start BGM automatically
-        if (backgroundMusic != null)
+        PlayMusic();
+    }
+
+    // --- MUSIC FUNCTIONS ---
+    public void PlayMusic()
+    {
+        if (backgroundMusic != null && musicSource != null)
         {
             musicSource.clip = backgroundMusic;
             musicSource.loop = true;
@@ -42,16 +45,39 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // Call this to play simple SFX
-    public void PlaySFX(AudioClip clip)
+    public void StopMusic()
     {
-        if (clip != null)
+        if (musicSource != null) musicSource.Stop();
+    }
+
+    // --- SFX FUNCTIONS ---
+    public void PlayJump()
+    {
+        PlaySFX(jumpSound);
+    }
+
+    public void PlayCrouch()
+    {
+        PlaySFX(crouchSound); // Optional: Swishing sound
+    }
+
+    public void PlayDeath()
+    {
+        StopMusic(); // Stop the happy music!
+        PlaySFX(dieSound);
+    }
+
+    public void PlayGameOver()
+    {
+        PlaySFX(gameOverSound);
+    }
+
+    // Helper function to play any sound safely
+    private void PlaySFX(AudioClip clip)
+    {
+        if (clip != null && sfxSource != null)
         {
             sfxSource.PlayOneShot(clip);
         }
     }
-
-    // Specific helpers for easy calling
-    public void PlayJump() => PlaySFX(jumpSound);
-    public void PlayCrouch() => PlaySFX(crouchSound);
 }

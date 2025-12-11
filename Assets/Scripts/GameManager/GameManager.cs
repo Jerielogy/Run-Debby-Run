@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]
     public int score = 0;
-    public int scoreToWin = 50;
+    public int scoreToWin = 40;
     public float worldSpeed = 3f;
     public float speedMultiplier = 1.5f;
 
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         UpdateScoreText();
 
         // Level 2 Transition (Score 20)
-        if (currentLevel == 1 && score >= 20)
+        if (currentLevel == 1 && score >= 15)
         {
             currentLevel = 2;
             worldSpeed = initialWorldSpeed * speedMultiplier;
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Level 2 reached! Speed Up.");
         }
         // Level 3 Transition (Score 40)
-        else if (currentLevel == 2 && score >= 40)
+        else if (currentLevel == 2 && score >= 25)
         {
             currentLevel = 3;
             worldSpeed *= speedMultiplier;

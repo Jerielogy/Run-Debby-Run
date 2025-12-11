@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 957136808352532884}
   - component: {fileID: 6531024889374465281}
   - component: {fileID: 4708084967557427643}
+  - component: {fileID: 4401676460165769799}
   m_Layer: 0
   m_Name: Enemy_Region1
   m_TagString: Obstacle
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 7681507372101067263}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.44, y: -0.27, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9067004307707964558}
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 74e46e0b4d89b4741962bdb6e2547c80, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 09914419bc82b4948b8a1c650a0e9e41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7681507372101067263}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c121239b73dfe824e980aeada06710a4, type: 3}
   m_Name: 
@@ -131,19 +132,40 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010284901, y: 1.1798496}
+  m_Offset: {x: 0.01378727, y: 0.28043592}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.485937, y: 24.800001}
+    oldSize: {x: 1.536, y: 2.048}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13.38, y: 10.07}
+  m_Size: {x: 1.235368, y: 1.1007907}
   m_EdgeRadius: 0
+--- !u!95 &4401676460165769799
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681507372101067263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b46e9a3752bdcc4ea0dbd1b0447c65b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8689347623856809039
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +231,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.86622524, y: -5.9892845}
+  m_Offset: {x: 0.09550983, y: 0.02577138}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -220,7 +242,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.11, y: 26.57}
+  m_Size: {x: 1.1865295, y: 3.561789}
   m_EdgeRadius: 0
 --- !u!114 &3272618132109053733
 MonoBehaviour:

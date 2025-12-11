@@ -65,7 +65,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.0796435, y: 7.2}
+  m_Offset: {x: -0.9792131, y: 0.27783638}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.159287, y: 23.45}
+  m_Size: {x: 0.29888225, y: 1.0756365}
   m_EdgeRadius: 0
 --- !u!114 &2474848607867857951
 MonoBehaviour:
@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 6691875407735827608}
   - component: {fileID: 562957519991468069}
   - component: {fileID: 1495249819314089765}
+  - component: {fileID: 5253007062961290788}
   m_Layer: 0
   m_Name: Hurdle 1
   m_TagString: Obstacle
@@ -118,8 +119,8 @@ Transform:
   m_GameObject: {fileID: 6676176650180543004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.8702, y: -0.3253, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.11187686, z: 0.11187686}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4408186533923723804}
@@ -166,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b0a919b4ce5d15f43854ca16c31b2738, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edcf4d11a3565a0468e15750f13860e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,16 +210,37 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0487456, y: -2.1022537}
+  m_Offset: {x: -0.022886112, y: -0.091444984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.48, y: 20.48}
+    oldSize: {x: 0.455, y: 0.548}
     newSize: {x: 20.48, y: 20.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.999965, y: 4.7542377}
+  m_Size: {x: 0.2838436, y: 0.2693862}
   m_EdgeRadius: 0
+--- !u!95 &5253007062961290788
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6676176650180543004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ad4adfdb12c9d4458970de9e92a3e80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

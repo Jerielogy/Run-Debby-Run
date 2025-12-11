@@ -1,46 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Components")]
     private Rigidbody2D rb;
-    private BoxCollider2D boxCollider;
     private Animator animator;
+
+    [Header("Colliders")]
+    public CapsuleCollider2D standingCollider; // Drag your Capsule here
+    public BoxCollider2D crouchingCollider;    // Drag your new Box here
 
     [Header("Movement Settings")]
     public float jumpForce = 12f;
-    public bool isGrounded = true; // Public para makita ng ibang scripts
-
-    [Header("Crouch Settings")]
-    public Vector2 crouchSize = new Vector2(1f, 0.5f);
-    private Vector2 standingSize;
-    private Vector2 standingOffset;
+    public bool isGrounded = true;
     public bool isCrouching = false;
     private bool isDead = false;
 
     // 0 = Keyboard, 1 = Voice, 2 = Joystick, 3 = Touch
-    // Mapapalitan yung value netong controlSchemeIndex depende sa options
     private int controlSchemeIndex = 0;
-    
+
     [Header("Effects")] public ParticleSystem dust;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
-
-        if (boxCollider != null)
-        {
-            // Memorize standing shape
-            standingSize = boxCollider.size;
-            standingOffset = boxCollider.offset;
-        }
-
-        // Load the Control Setting basically PlayerPrefs save the options
         controlSchemeIndex = PlayerPrefs.GetInt("ControlScheme", 0);
+
+        // Ensure we start in the correct state (Standing ON, Crouching OFF)
+        if (standingCollider != null) standingCollider.enabled = true;
+        if (crouchingCollider != null) crouchingCollider.enabled = false;
     }
 
     void Update()
@@ -51,16 +40,12 @@ public class PlayerController : MonoBehaviour
 
     void HandleInput()
     {
+        if (isDead || Time.timeScale == 0f) return;
 
-        if (isDead || Time.timeScale == 0f) return;    
-        if (Time.timeScale == 0f) return;
-
-        // --- 1. IGNORE EXTERNAL MODES ---
-        // Kung Voice (1) or Touch (3) ang napili , do NOT check keys/buttons here.
+        // Voice (1) and Touch (3) are handled by public functions below
         if (controlSchemeIndex == 1 || controlSchemeIndex == 3) return;
 
-
-        // --- 2. KEYBOARD CONTROL (Scheme 0) ---
+        // --- KEYBOARD (Scheme 0) ---
         if (controlSchemeIndex == 0)
         {
             // Jump
@@ -79,78 +64,82 @@ public class PlayerController : MonoBehaviour
             {
                 StopCrouch();
             }
-
         }
 
-
-        // --- 3. JOYSTICK / GAMEPAD CONTROL (Scheme 2) ---
+        // --- JOYSTICK (Scheme 2) ---
         if (controlSchemeIndex == 2)
         {
-            // Jump (Button 0 is usually X on PS4, A on Xbox)
+            // JUMP: Usually Button 0 (A on Xbox, X on PS, Bottom Button on Generic)
             if (Input.GetKeyDown(KeyCode.JoystickButton0) && isGrounded && !isCrouching)
             {
                 PerformJump();
             }
 
-            // Crouch (Vertical Axis or D-Pad)
-            float vAxis = Input.GetAxisRaw("Vertical");
+            // CROUCH LOGIC (Stick OR Buttons)
 
-            if (vAxis < -0.5f) // Stick pushed down
+            // 1. Check Analog Stick (Requires "VerticalJoystick" setup in Input Manager)
+            float vAxis = Input.GetAxisRaw("VerticalJoystick");
+            bool stickDown = (vAxis < -0.5f);
+
+            // 2. Check Face Buttons (Usually Circle/B is Button 1 or 2)
+            // Adjust these numbers if your specific controller uses different IDs
+            bool buttonDown = Input.GetKey(KeyCode.JoystickButton2) || Input.GetKey(KeyCode.JoystickButton1);
+
+            // 3. Trigger Crouch
+            if (stickDown || buttonDown)
             {
                 if (!isCrouching) StartCrouch();
             }
-            else // Stick released
+            else
             {
+                // Only stand up if BOTH stick and buttons are released
                 if (isCrouching) StopCrouch();
             }
         }
     }
 
-    // --- CORE MOVEMENT LOGIC ---
+    // --- CORE LOGIC ---
 
     void PerformJump()
     {
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayJump();
+
         if (isGrounded && !isCrouching)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             isGrounded = false;
-
-            // Animation handles the Collider shrinking (Artist Method)
             if (animator != null) animator.SetTrigger("Jump");
-
-            // Sound
-            if (AudioManager.Instance != null) AudioManager.Instance.PlayJump();
-
             if (dust != null) dust.Stop();
         }
     }
 
     void StartCrouch()
     {
-        if (isGrounded && !isCrouching && boxCollider != null)
+        if (isGrounded && !isCrouching)
         {
             isCrouching = true;
 
-            // Smart Math: Keep feet on the ground
-            float heightDifference = standingSize.y - crouchSize.y;
-            float newOffsetY = standingOffset.y - (heightDifference / 2);
-
-            boxCollider.size = crouchSize;
-            boxCollider.offset = new Vector2(standingOffset.x, newOffsetY);
+            // --- THE COLLIDER SWAP ---
+            if (standingCollider != null) standingCollider.enabled = false;
+            if (crouchingCollider != null) crouchingCollider.enabled = true;
+            // ------------------------
 
             if (animator != null) animator.SetBool("IsCrouching", true);
-            if (AudioManager.Instance != null) AudioManager.Instance.PlayCrouch();
         }
+
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayCrouch();
     }
 
     public void StopCrouch()
     {
-        if (isCrouching && boxCollider != null)
+        if (isCrouching)
         {
             isCrouching = false;
-            // Reset to standing shape
-            boxCollider.size = standingSize;
-            boxCollider.offset = standingOffset;
+
+            // --- SWAP BACK ---
+            if (crouchingCollider != null) crouchingCollider.enabled = false;
+            if (standingCollider != null) standingCollider.enabled = true;
+            // -----------------
 
             if (animator != null) animator.SetBool("IsCrouching", false);
         }
@@ -160,47 +149,43 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            if (!isGrounded)
+            // Only land if falling
+            if (!isGrounded && collision.relativeVelocity.y >= 0)
             {
                 isGrounded = true;
-
-                // Safety reset just in case
-                if (boxCollider != null) { boxCollider.size = standingSize; boxCollider.offset = standingOffset; }
-
-                // Auto-stand logic:
-                // Only stand up if the player is NOT holding the down button anymore
-                bool holdingDown = false;
-                if (controlSchemeIndex == 0) holdingDown = Input.GetKey(KeyCode.DownArrow);
-                if (controlSchemeIndex == 2) holdingDown = Input.GetAxisRaw("Vertical") < -0.5f;
-                // Voice/Touch don't "hold" down in the same way, so they auto-stand via their own StopCrouch calls.
-
                 if (dust != null) dust.Play();
 
-                if (isCrouching && !holdingDown)
+                // Auto-stand logic prevents getting stuck in crouch upon landing
+                bool holdingDown = false;
+
+                if (controlSchemeIndex == 0) holdingDown = Input.GetKey(KeyCode.DownArrow);
+                if (controlSchemeIndex == 2)
                 {
-                    StopCrouch();
+                    float vAxis = Input.GetAxisRaw("VerticalJoystick");
+                    bool btn = Input.GetKey(KeyCode.JoystickButton1) || Input.GetKey(KeyCode.JoystickButton2);
+                    holdingDown = (vAxis < -0.5f) || btn;
                 }
+
+                if (isCrouching && !holdingDown) StopCrouch();
             }
         }
     }
 
-    // --- PUBLIC WRAPPERS (Used by Voice, Touch, and OnScreenControls) ---
+
     public void Jump()
     {
-        // DOUBLE PROTECTION: 
-        // If we are in Keyboard(0) or Joystick(2) mode, ignore external commands.
-        if (controlSchemeIndex == 0 || controlSchemeIndex == 2) return;
-
-        PerformJump();
+        if (controlSchemeIndex != 0) PerformJump();
     }
 
     public void Crouch()
     {
-        // Note: For "Touch" controls, holding the button calls this repeatedly, 
-        // but StartCrouch() checks "if (!isCrouching)" so it's safe.
-        if (controlSchemeIndex == 0 || controlSchemeIndex == 2) return;
+        if (controlSchemeIndex != 0) StartCrouch();
+    }
 
-        StartCrouch();
+    
+    public void ReleaseCrouch()
+    {
+        if (controlSchemeIndex != 0) StopCrouch();
     }
 
     public void TriggerDeathAnimation()
@@ -211,12 +196,13 @@ public class PlayerController : MonoBehaviour
 
         if (rb != null)
         {
-            
             rb.drag = 0.5f;
-
-            rb.AddForce(new Vector2(10f, 0), ForceMode2D.Impulse);
+            rb.velocity = Vector2.zero;
+            rb.AddForce(new Vector2(-5f, 5f), ForceMode2D.Impulse);
         }
 
         this.enabled = false;
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayDeath();
     }
+    
 }

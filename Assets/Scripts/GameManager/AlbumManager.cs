@@ -10,13 +10,14 @@ public class AlbumManager : MonoBehaviour
     [Header("Data")]
     public PhotoData[] allPhotos;     // Drag your 18 PhotoData files here
 
-    // --- NEW SECTION START ---
+
     [Header("Viewer UI")]
-    public GameObject photoViewPanel;   // The panel we just made
-    public Image fullSizeImage;         // The large image inside the panel
+    public GameObject photoViewPanel;   // The panel we created
+    public Image fullSizeImage;         // The large image inside the panel zoomed
     public Button closeButton;          // The close button
     public Button shareButton;          // The share button
-    // --- NEW SECTION END ---
+    
+
 
     private PhotoData currentOpenPhoto; // Tracks which photo is open
 
@@ -71,7 +72,6 @@ public class AlbumManager : MonoBehaviour
         }
     }
 
-    // --- NEW FUNCTIONS ---
 
     void OpenPhotoView(PhotoData photo)
     {
@@ -89,6 +89,6 @@ public class AlbumManager : MonoBehaviour
     {
         if (currentOpenPhoto == null) return;
         Debug.Log("Sharing photo: " + currentOpenPhoto.photoName);
-        // We will add the real Instagram plugin here later!
+        // To be add sharing to other socmed platforms later
     }
 }

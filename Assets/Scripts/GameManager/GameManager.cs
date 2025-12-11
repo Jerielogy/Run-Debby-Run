@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     // --- 1. SINGLETON (Critical for other scripts to find this) ---
     public static GameManager Instance;
 
+    [Header("Level Reward")]
+    public PhotoData photoReward; // <--- DRAG YOUR PHOTO HERE (Photo_01, Photo_02, etc.)
+
     [Header("UI Panels")]
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel; // Win Screen
@@ -86,6 +89,14 @@ public class GameManager : MonoBehaviour
         // Win Condition
         if (score >= scoreToWin)
         {
+            // --- NEW REWARD LOGIC ---
+            if (photoReward != null)
+            {
+                photoReward.Unlock();
+                Debug.Log("WINNER! Unlocked Photo: " + photoReward.name);
+            }
+            // ------------------------
+
             WinLevel();
         }
     }
@@ -135,7 +146,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0f;
     }
-    
+
 
     public void PauseGame()
     {

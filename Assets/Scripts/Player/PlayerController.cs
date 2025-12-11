@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Settings")]
     public float jumpForce = 12f;
-    public bool isGrounded = true; // Public so other scripts can see it
+    public bool isGrounded = true; // Public para makita ng ibang scripts
 
     [Header("Crouch Settings")]
     public Vector2 crouchSize = new Vector2(1f, 0.5f);
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool isDead = false;
 
     // 0 = Keyboard, 1 = Voice, 2 = Joystick, 3 = Touch
+    // Mapapalitan yung value netong controlSchemeIndex depende sa options
     private int controlSchemeIndex = 0;
     
     [Header("Effects")] public ParticleSystem dust;
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
             standingOffset = boxCollider.offset;
         }
 
-        // Load the Control Setting
+        // Load the Control Setting basically PlayerPrefs save the options
         controlSchemeIndex = PlayerPrefs.GetInt("ControlScheme", 0);
     }
 
@@ -55,7 +56,7 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale == 0f) return;
 
         // --- 1. IGNORE EXTERNAL MODES ---
-        // If Voice (1) or Touch (3) is selected, do NOT check keys/buttons here.
+        // Kung Voice (1) or Touch (3) ang napili , do NOT check keys/buttons here.
         if (controlSchemeIndex == 1 || controlSchemeIndex == 3) return;
 
 

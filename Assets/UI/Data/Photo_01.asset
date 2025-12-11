@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d481fc1d8c98d479801f6782f39b52, type: 3}
   m_Name: Photo_01
   m_EditorClassIdentifier: 
-  photoID: 1
+  photoName: 
+  photoID: 2
   regionName: RegionOne
-  fullImage: {fileID: 21300000, guid: 45d9d9b15f85113419fb2b47b5dc06c0, type: 3}
+  fullImage: {fileID: 21300000, guid: 5c2c08c1b09a40a4aba1b5ed9ddf924b, type: 3}
   lockedIcon: {fileID: 21300000, guid: ab4c0bed126dc6d498957ff113e66a03, type: 3}

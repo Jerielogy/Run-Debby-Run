@@ -5310,7 +5310,7 @@ Transform:
   m_GameObject: {fileID: 421240783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5, y: 2.1, z: 0}
+  m_LocalPosition: {x: -5.5, y: 1.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5357,7 +5357,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: a27a747651c37cb4cb0432632adf0010, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5607da16affa74e4393493766165c60c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5393,7 +5393,7 @@ Transform:
   m_GameObject: {fileID: 519951330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.6, z: 0}
+  m_LocalPosition: {x: 0, y: -2.805, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7414,7 +7414,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 539dc5f894a9b54479448624ddf793e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64f17033d88b95c4191f824201f2210e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7477,7 +7477,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 1.27}
+    oldSize: {x: 19.2, y: 1.71}
     newSize: {x: 20, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
@@ -8242,10 +8242,10 @@ MonoBehaviour:
   instructionPanel: {fileID: 1552301263}
   instructionText: {fileID: 2076402350}
   gameHUD: {fileID: 26485362}
-  rockPrefab: {fileID: 6676176650180543004, guid: 6de6a9c01cf8190418a250b5c61c7e75, type: 3}
-  birdPrefab: {fileID: 7681507372101067263, guid: 53a6befe732efe845b50021c0e0b29ae, type: 3}
+  rockPrefab: {fileID: 4600777121603700053, guid: 861ac052df351ba428ea1ea93ae1fa0d, type: 3}
+  birdPrefab: {fileID: 7681507372101067263, guid: 2475e28533693d4489de73d25ab99153, type: 3}
   spawnPoint: {fileID: 519951331}
-  rockY: -1.5
+  rockY: -1.7
   birdY: -0.5
 --- !u!4 &1740242614
 Transform:
@@ -8483,7 +8483,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 19.2, y: 1.27}
+    oldSize: {x: 19.2, y: 1.71}
     newSize: {x: 20, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 2
@@ -8533,7 +8533,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 539dc5f894a9b54479448624ddf793e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64f17033d88b95c4191f824201f2210e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8586,7 +8586,7 @@ Transform:
   m_GameObject: {fileID: 1924054457}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.47, y: 2.1, z: 0}
+  m_LocalPosition: {x: 4.47, y: 2.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8633,7 +8633,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: a27a747651c37cb4cb0432632adf0010, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b975677c83c48de49807d60348cf0aff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8702,7 +8702,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 39f40c1d84fe55c49acba118d647f6c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ec68e366d3e6ca4298d144a6d816353, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8855,9 +8855,9 @@ MonoBehaviour:
   groundSpawnPoint: {fileID: 519951331}
   airSpawnPoint: {fileID: 348570118}
   groundPrefabs:
-  - {fileID: 6676176650180543004, guid: 6de6a9c01cf8190418a250b5c61c7e75, type: 3}
+  - {fileID: 4600777121603700053, guid: 861ac052df351ba428ea1ea93ae1fa0d, type: 3}
   airPrefabs:
-  - {fileID: 7681507372101067263, guid: 53a6befe732efe845b50021c0e0b29ae, type: 3}
+  - {fileID: 7681507372101067263, guid: 2475e28533693d4489de73d25ab99153, type: 3}
   minSpawnTime: 1.5
   maxSpawnTime: 3
 --- !u!1 &2076402349

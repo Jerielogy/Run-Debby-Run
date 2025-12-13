@@ -143,6 +143,10 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
 
         Debug.Log("Death sequence started . . . ");
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayDeath();  
+        }
 
         PlayerController player = FindObjectOfType<PlayerController>();
         if (player != null) player.TriggerDeathAnimation();

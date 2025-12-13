@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip dieSound;
     public AudioClip gameOverSound;
 
+    
     void Awake()
     {
         // Singleton Pattern: Ensure only one Audio Manager exists
@@ -35,6 +37,35 @@ public class AudioManager : MonoBehaviour
     }
 
     // --- MUSIC FUNCTIONS ---
+    void OnEnable()
+    {
+        // When the AudioManager is enabled, subscribe to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        // When the AudioManager is disabled/destroyed, unsubscribe to prevent errors
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Only restart music if we are NOT loading into the Main Menu/Map Selection
+        // Assuming your Main Menu is the first scene (Index 0 or named "MainMenu")
+        // Check your Build Settings for the exact name/index.
+
+        if (scene.name == "Level1" || scene.name == "Level2" || scene.name == "MapSelection")
+        {
+            // The music might have been stopped by PlayDeath() or PlayGameOver()
+            if (musicSource != null && !musicSource.isPlaying)
+            {
+                PlayMusic();
+                Debug.Log("BGM restarted for new scene.");
+            }
+        }
+    }
+    
     public void PlayMusic()
     {
         if (backgroundMusic != null && musicSource != null)
@@ -69,7 +100,11 @@ public class AudioManager : MonoBehaviour
 
     public void PlayGameOver()
     {
-        PlaySFX(gameOverSound);
+        // Make sure the sfxSource is not null and the clip is assigned
+        if (gameOverSound != null && sfxSource != null)
+        {
+            sfxSource.PlayOneShot(gameOverSound);
+        }
     }
 
     // Helper function to play any sound safely

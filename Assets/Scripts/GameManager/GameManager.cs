@@ -9,13 +9,17 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Level Reward")]
-    public PhotoData photoReward; // <--- DRAG YOUR PHOTO HERE (Photo_01, Photo_02, etc.)
+    public PhotoData photoReward; // The photo needed for the gallery
+
+    [Header("Map Progression")]
+    [Tooltip("Which Region ID does this level unlock? (Set 1 to unlock CAR, 2 for Region 2, etc.)")]
+    public int regionToUnlockIndex = 0;
 
     [Header("UI Panels")]
     public GameObject gameOverPanel;
     public GameObject levelCompletePanel; // Win Screen
-    public GameObject pauseMenuPanel;     // New Pause Screen
-    public GameObject pauseButton;        // New Pause Button (||)
+    public GameObject pauseMenuPanel;     // Pause Screen
+    public GameObject pauseButton;        // Pause Button (||)
 
     [Header("UI Text")]
     public TextMeshProUGUI levelPopUpText;
@@ -69,7 +73,7 @@ public class GameManager : MonoBehaviour
         score += pointsToAdd;
         UpdateScoreText();
 
-        // Level 2 Transition (Score 20)
+        // Level 2 Transition (Score 15)
         if (currentLevel == 1 && score >= 15)
         {
             currentLevel = 2;
@@ -77,7 +81,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(ShowLevelPopUp("Level 2"));
             Debug.Log("Level 2 reached! Speed Up.");
         }
-        // Level 3 Transition (Score 40)
+        // Level 3 Transition (Score 25)
         else if (currentLevel == 2 && score >= 25)
         {
             currentLevel = 3;
@@ -89,14 +93,7 @@ public class GameManager : MonoBehaviour
         // Win Condition
         if (score >= scoreToWin)
         {
-            // --- NEW REWARD LOGIC ---
-            if (photoReward != null)
-            {
-                photoReward.Unlock();
-                Debug.Log("WINNER! Unlocked Photo: " + photoReward.name);
-            }
-            // ------------------------
-
+            UnlockRewards();
             WinLevel();
         }
     }
@@ -104,6 +101,25 @@ public class GameManager : MonoBehaviour
     void UpdateScoreText()
     {
         if (scoreText != null) scoreText.text = "Score: " + score;
+    }
+
+    // --- REWARD & PROGRESSION ---
+    void UnlockRewards()
+    {
+        // 1. Unlock Photo
+        if (photoReward != null)
+        {
+            photoReward.Unlock();
+            Debug.Log("WINNER! Unlocked Photo: " + photoReward.name);
+        }
+
+        // 2. Unlock Next Map Region
+        if (regionToUnlockIndex > 0)
+        {
+            PlayerPrefs.SetInt("RegionUnlocked_" + regionToUnlockIndex, 1);
+            PlayerPrefs.Save();
+            Debug.Log("Map Region " + regionToUnlockIndex + " Unlocked!");
+        }
     }
 
     // --- GAME STATES (Win, Lose, Pause) ---
@@ -147,7 +163,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
-
     public void PauseGame()
     {
         if (isGameOver) return;
@@ -157,7 +172,7 @@ public class GameManager : MonoBehaviour
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
         if (pauseButton != null) pauseButton.SetActive(false);
 
-        // Optional: Disable voice while paused
+        // Disable voice while paused to prevent accidental jumps
         if (voiceController != null) voiceController.enabled = false;
     }
 
@@ -176,21 +191,19 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1f; // Unfreeze before reloading
-
-        if (SceneTransitionManager.Instance != null)
-            SceneTransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
-        else
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
 
-        if (SceneTransitionManager.Instance != null)
-            SceneTransitionManager.Instance.LoadScene("MainMenu");
-        else
-            SceneManager.LoadScene("MainMenu");
+    public void GoToMapSelection()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MapSelection");
     }
 
     private IEnumerator ShowLevelPopUp(string text)

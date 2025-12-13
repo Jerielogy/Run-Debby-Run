@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photoName: 
   photoID: 5
-  regionName: RegionOne
-  fullImage: {fileID: 21300000, guid: 45d9d9b15f85113419fb2b47b5dc06c0, type: 3}
+  regionName: RegionNCR
+  fullImage: {fileID: 21300000, guid: 90811f0da9f56ba4bb5407a62144799a, type: 3}
   lockedIcon: {fileID: 21300000, guid: ab4c0bed126dc6d498957ff113e66a03, type: 3}

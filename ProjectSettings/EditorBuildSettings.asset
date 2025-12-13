@@ -9,12 +9,33 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 773cd0f3f557bbd4897a1a982bcf9353
   - enabled: 1
+    path: Assets/Scenes/MapSelection.unity
+    guid: b4e27544e2fa61340835844ddc50ae6e
+  - enabled: 1
     path: Assets/Scenes/OptionsScene.unity
     guid: e11be16f2d9e4c845ae13038d7d3e0bc
   - enabled: 1
     path: Assets/Scenes/Region1 Level1.unity
     guid: adbdb886b2e0822419ffb28d40d918b8
   - enabled: 1
+    path: Assets/Scenes/Region CAR.unity
+    guid: 6e5c2b29f29d7d3498f598329d0f5f4d
+  - enabled: 1
     path: Assets/Scenes/Region2.unity
     guid: d569f3c1c43da764e9e5d974f38885cc
+  - enabled: 1
+    path: Assets/Scenes/Region3.unity
+    guid: 03b886c7b8945044cb39a3415648f5cd
+  - enabled: 1
+    path: Assets/Scenes/NCR.unity
+    guid: 427765a75e8a40245967ed3597da65c6
+  - enabled: 1
+    path: Assets/Scenes/Region4A.unity
+    guid: 0bd069912d49bcb4f931a1486534b9cb
+  - enabled: 1
+    path: Assets/Scenes/Region4B.unity
+    guid: 7fea1aa41404205419574fcb09cc6784
+  - enabled: 1
+    path: Assets/Scenes/Region5.unity
+    guid: 160f3c5b167cf3745874416aec001900
   m_configObjects: {}

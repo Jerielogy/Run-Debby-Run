@@ -7998,7 +7998,7 @@ MonoBehaviour:
   instructionPanel: {fileID: 1552301263}
   instructionText: {fileID: 2076402350}
   gameHUD: {fileID: 26485362}
-  rockPrefab: {fileID: 4600777121603700053, guid: 861ac052df351ba428ea1ea93ae1fa0d, type: 3}
+  rockPrefab: {fileID: 8889322405776539145, guid: 89fbb1b877e0e234b8b1cc3323908ac0, type: 3}
   birdPrefab: {fileID: 7681507372101067263, guid: 2475e28533693d4489de73d25ab99153, type: 3}
   spawnPoint: {fileID: 519951331}
   rockY: -1.7
@@ -8611,7 +8611,7 @@ MonoBehaviour:
   groundSpawnPoint: {fileID: 519951331}
   airSpawnPoint: {fileID: 348570118}
   groundPrefabs:
-  - {fileID: 4600777121603700053, guid: 861ac052df351ba428ea1ea93ae1fa0d, type: 3}
+  - {fileID: 8889322405776539145, guid: 89fbb1b877e0e234b8b1cc3323908ac0, type: 3}
   airPrefabs:
   - {fileID: 7681507372101067263, guid: 2475e28533693d4489de73d25ab99153, type: 3}
   minSpawnTime: 1.5

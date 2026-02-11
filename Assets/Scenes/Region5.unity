@@ -8441,9 +8441,12 @@ MonoBehaviour:
   groundSpawnPoint: {fileID: 519951331}
   airSpawnPoint: {fileID: 348570118}
   groundPrefabs:
-  - {fileID: 6634076203412375539, guid: 7b295dc2f8080e64888f86820c1ce894, type: 3}
+  - {fileID: 7701553830124381168, guid: 37fd8f20498fe204ca2d158f5ca437b0, type: 3}
+  - {fileID: 9037588925263781615, guid: cb591ff6467e8184aa6ab38021f4c956, type: 3}
+  - {fileID: 2286325691315914359, guid: f1cc8b1ea0a56d44db69eab8fbca8e11, type: 3}
   airPrefabs:
-  - {fileID: 5485041630053590017, guid: 428717242fd53244a837768061f72508, type: 3}
+  - {fileID: 337276214161840579, guid: 17ac6b782a1cf8744a6a08c4ec5366a5, type: 3}
+  - {fileID: 8777368343264524665, guid: 9b6bf840e196cc742b7315515ac6b15c, type: 3}
   minSpawnTime: 1.5
   maxSpawnTime: 3
 --- !u!1 &2076402349

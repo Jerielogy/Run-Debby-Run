@@ -5300,7 +5300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &421240784
 Transform:
   m_ObjectHideFlags: 0
@@ -8332,7 +8332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1924054458
 Transform:
   m_ObjectHideFlags: 0
@@ -8612,6 +8612,8 @@ MonoBehaviour:
   airSpawnPoint: {fileID: 348570118}
   groundPrefabs:
   - {fileID: 5914092954385965660, guid: 109c52f184d4c1343895161767b4488f, type: 3}
+  - {fileID: 4223290833601487365, guid: 3d7099546b4c1294ca29cee1f855f9a1, type: 3}
+  - {fileID: 7309527945014601434, guid: 095710ab9ff22294f8fb6f2fd4da1aa7, type: 3}
   airPrefabs:
   - {fileID: 8649189053061877549, guid: 36a724e20ba2f3c42ac233a3f4a52f50, type: 3}
   minSpawnTime: 1.5

@@ -8447,8 +8447,7 @@ MonoBehaviour:
   - {fileID: 7317639948199239956, guid: b2bf840bdb45d584da02d69dc56bc588, type: 3}
   - {fileID: 4970017589603390364, guid: a84e4312de7037147b59be190dc1ab70, type: 3}
   - {fileID: 767028558446567279, guid: 4e4f775feab5f854a98a1b73b607e1af, type: 3}
-  airPrefabs:
-  - {fileID: 5485041630053590017, guid: 428717242fd53244a837768061f72508, type: 3}
+  airPrefabs: []
   minSpawnTime: 1.5
   maxSpawnTime: 3
 --- !u!1 &2076402349

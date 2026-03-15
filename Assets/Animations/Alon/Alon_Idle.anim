@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IDLE
+  m_Name: Alon_Idle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -22,21 +22,21 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 21300000, guid: 47d819fa706fba243ac516fe50a0bb92, type: 3}
-    - time: 0.13333334
+    - time: 0.1
       value: {fileID: 21300000, guid: 0c8bf3ea00b6a4e499b350d02fd1e99d, type: 3}
-    - time: 0.25
+    - time: 0.2
       value: {fileID: 21300000, guid: e85b599fe3d68b443b4c82768bae8817, type: 3}
-    - time: 0.36666667
+    - time: 0.28333333
       value: {fileID: 21300000, guid: 0aaa2f991c407f244be630bf948dfb50, type: 3}
-    - time: 0.5
+    - time: 0.36666667
       value: {fileID: 21300000, guid: f3876b74d2882d74998a0e8bba28a046, type: 3}
-    - time: 0.6333333
+    - time: 0.46666667
       value: {fileID: 21300000, guid: a8d6e6d9ce2f0474fb6b65b02146a003, type: 3}
-    - time: 0.75
+    - time: 0.55
       value: {fileID: 21300000, guid: a32680bd678f98e49b72f7098d876b07, type: 3}
-    - time: 0.8666667
+    - time: 0.65
       value: {fileID: 21300000, guid: 6207d18c10e5f1e45a8667c2321be17e, type: 3}
-    - time: 1
+    - time: 0.75
       value: {fileID: 21300000, guid: 216a8b9cc1a33944aae0431b16fb300b, type: 3}
     attribute: m_Sprite
     path: 
@@ -74,12 +74,12 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 0.76666665
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 0
+    m_LoopTime: 1
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0

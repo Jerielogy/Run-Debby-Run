@@ -5412,10 +5412,10 @@ GameObject:
   - component: {fileID: 540310537}
   - component: {fileID: 540310542}
   - component: {fileID: 540310544}
-  - component: {fileID: 540310546}
   - component: {fileID: 540310548}
   - component: {fileID: 540310547}
   - component: {fileID: 540310549}
+  - component: {fileID: 540310550}
   m_Layer: 0
   m_Name: Alon
   m_TagString: Player
@@ -5543,27 +5543,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredAccuracy: 0.386
---- !u!95 &540310546
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540310535}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c8e0cb3598323d4fa2d49478683dfd7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &540310547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5600,7 +5579,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.86, y: 15}
+    oldSize: {x: 1.786, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5663,6 +5642,27 @@ MonoBehaviour:
   waterDrag: 2
   normalGravity: 3
   isSwimming: 1
+--- !u!95 &540310550
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540310535}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 990699ad38edc004698321e2767fcff9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &557039678
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,7 +6580,7 @@ MonoBehaviour:
   levelPopUpText: {fileID: 1521494400}
   scoreText: {fileID: 1292625297}
   score: 0
-  scoreToWin: 50
+  scoreToWin: 15
   worldSpeed: 4
   speedMultiplier: 1.5
   isGameOver: 0
@@ -6918,7 +6918,7 @@ MonoBehaviour:
   - name: Sea
     layerSprite: {fileID: 21300000, guid: a67d7d75e6d18b34b8cdb962af6ed7c4, type: 3}
     parallaxFactor: 0.05
-    yOffset: 0.4
+    yOffset: 0
     sortingOrder: -9
 --- !u!4 &970747028
 Transform:

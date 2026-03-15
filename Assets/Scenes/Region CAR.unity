@@ -6509,7 +6509,7 @@ MonoBehaviour:
   levelPopUpText: {fileID: 1521494400}
   scoreText: {fileID: 1292625297}
   score: 0
-  scoreToWin: 50
+  scoreToWin: 15
   worldSpeed: 4
   speedMultiplier: 1.5
   isGameOver: 0

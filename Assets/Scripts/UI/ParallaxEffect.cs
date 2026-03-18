@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class ParallaxMaster : MonoBehaviour
+public class ParallaxEffect : MonoBehaviour
 {
     [System.Serializable]
     public class ParallaxLayer
@@ -54,8 +54,11 @@ public class ParallaxMaster : MonoBehaviour
         }
     }
 
-    void LateUpdate() // Use LateUpdate to stop the "shaking" jitter
+    void LateUpdate()
     {
+        // --- THE FIX: ADD THIS CHECK ---
+        if (Time.timeScale == 0) return;
+
         for (int i = 0; i < layers.Count; i++)
         {
             float temp = (cam.transform.position.x * (1 - layers[i].parallaxFactor));
@@ -63,7 +66,6 @@ public class ParallaxMaster : MonoBehaviour
 
             activeLayers[i].transform.position = new Vector3(startPositions[i] + dist, activeLayers[i].transform.position.y, 0);
 
-            // Infinite Looping Logic
             if (temp > startPositions[i] + lengths[i]) startPositions[i] += lengths[i];
             else if (temp < startPositions[i] - lengths[i]) startPositions[i] -= lengths[i];
         }

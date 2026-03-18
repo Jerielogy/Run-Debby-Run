@@ -47,7 +47,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1f; // Ensure game is running
+        // FORCE GLOBAL FREEZE AT START
+        Time.timeScale = 0f;
+
         isGameOver = false;
         score = 0;
         currentLevel = 1;
@@ -55,14 +57,13 @@ public class GameManager : MonoBehaviour
 
         UpdateScoreText();
 
+        // Turn OFF the HUD (Score/Popups) so they don't show over the tutorial
+        if (levelPopUpText != null) levelPopUpText.gameObject.SetActive(false);
+
         // UI Setup
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (levelCompletePanel != null) levelCompletePanel.SetActive(false);
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
-        if (pauseButton != null) pauseButton.SetActive(true);
-
-        // Show "Level 1"
-        if (levelPopUpText != null) StartCoroutine(ShowLevelPopUp("Level 1"));
     }
 
     // --- SCORE & LEVELING LOGIC ---
@@ -100,7 +101,9 @@ public class GameManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        if (scoreText != null) scoreText.text = "Score: " + score;
+        if (scoreText != null) { 
+            scoreText.text = "Score: " + score;
+        }
     }
 
     // --- REWARD & PROGRESSION ---

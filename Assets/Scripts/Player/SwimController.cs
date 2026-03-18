@@ -37,11 +37,11 @@ public class SwimController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDead) return;
+        // --- THE FIX: ADD THIS CHECK ---
+        if (isDead || Time.timeScale == 0) return;
 
         if (isSwimming)
         {
-            // Always move forward horizontally
             rb.velocity = new Vector2(forwardSpeed, rb.velocity.y);
         }
     }

@@ -5,46 +5,55 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject[] obstaclePrefabs;
-
     public float startDelay = 2.0f;
-
     public float spawnInterval = 3.0f;
-
     public float enemyYOffset = 2.0f;
-
     public float spawnYPosition = -3.5f;
 
-    
+    // --- THE FIX: REMOVED 'hasStarted' TO CLEAR THE WARNING ---
+    private float timer;
+
     void Start()
     {
-        InvokeRepeating("SpawnObstacle", startDelay, spawnInterval);
+        // We set the timer so the first spawn happens after the startDelay
+        timer = spawnInterval - startDelay;
+    }
+
+    void Update()
+    {
+        // 1. HARD FREEZE: Stops spawning while the Region 1 Intro is open
+        if (Time.timeScale == 0) return;
+
+        timer += Time.deltaTime;
+
+        if (timer >= spawnInterval)
+        {
+            SpawnObstacle();
+            timer = 0;
+        }
     }
 
     void SpawnObstacle()
     {
-        // 1. Pick a random obstacle prefab
+        if (obstaclePrefabs.Length == 0) return;
+
         int randomIndex = Random.Range(0, obstaclePrefabs.Length);
         GameObject prefabToSpawn = obstaclePrefabs[randomIndex];
 
-        // --- NEW SIMPLER LOGIC: Check the prefab's NAME ---
-        float actualSpawnY = spawnYPosition; // Default to hurdle height
+        float actualSpawnY = spawnYPosition;
 
-        // If the prefab's name contains "Enemy" (case-insensitive)
+        // Uses your logic to lift "Enemy" types higher than ground hurdles
         if (prefabToSpawn.name.ToLower().Contains("enemy"))
         {
-            // Add the extra height
             actualSpawnY += enemyYOffset;
         }
-        // ----------------------------------------------------
 
-        // 3. Calculate the full spawn position
         Vector3 spawnPos = new Vector3(
-            transform.position.x,   // Use the spawner's X
-            actualSpawnY,           // Use the calculated Y
-            transform.position.z    // Use the spawner's Z
+            transform.position.x,
+            actualSpawnY,
+            transform.position.z
         );
 
-        // 4. Spawn the obstacle
         Instantiate(prefabToSpawn, spawnPos, prefabToSpawn.transform.rotation);
     }
 }

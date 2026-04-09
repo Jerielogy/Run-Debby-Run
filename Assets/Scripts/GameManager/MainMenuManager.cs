@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // Make sure your game scene is named "Game"
         // or "Region1-Level1"
-        SceneTransitionManager.Instance.LoadScene("MapSelection");
+        SceneTransitionManager.Instance.LoadScene("Map_Experimental");
     }
 
     // This function is for your "Options" button
@@ -26,4 +26,6 @@ public class MainMenuManager : MonoBehaviour
         Debug.Log("Quitting game..."); // This shows a message in the editor
         Application.Quit(); // This only works in a real, built game
     }
+
+    
 }

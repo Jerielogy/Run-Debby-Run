@@ -96,4 +96,15 @@ public class OptionsManager : MonoBehaviour
         else
             SceneManager.LoadScene("MainMenu");
     }
+
+    public void ResetGameProgress()
+    {
+        // Wipes all PlayerPrefs (LuzonProgress, WorldProgress, etc.)
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+
+        Debug.Log("Thesis progress has been reset!");
+
+        // Optional: Add a sound effect here so the player knows it worked!
+    }
 }

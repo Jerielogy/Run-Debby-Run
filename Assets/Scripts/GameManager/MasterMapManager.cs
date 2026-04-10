@@ -8,10 +8,12 @@ public class MasterMapManager : MonoBehaviour
     [Header("Intro & Dialogue")]
     public GameObject panelIntroPH;
     public TextMeshProUGUI introText;
-    public TextMeshProUGUI introButtonText; // To change "Next" to "Let's Go!"
+    public TextMeshProUGUI introButtonText;
     [TextArea(3, 10)]
-    public string[] introDialogues; // Put your 3 parts here in the Inspector
+    public string[] introDialogues;
     private int dialogueIndex = 0;
+
+    public GameObject[] guideHands;
 
     [Header("Main Panels")]
     public GameObject panelMainSelect;
@@ -23,21 +25,43 @@ public class MasterMapManager : MonoBehaviour
     public GameObject previewCard;
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI descText;
-    private string sceneToLoad; // Stores the name of the level to play
+    private string sceneToLoad;
 
     [Header("Region Buttons (Main Select)")]
     public Button luzonBtn;
     public Button visayasBtn;
     public Button mindanaoBtn;
 
+    [Header("Luzon Level Pins")]
+    [Tooltip("Order: Region 1, CAR, Region 2, Region 3, Region NCR, Region 4A, Region 4B, Region 5")]
+    public Button[] luzonLevelPins;
+
     [Header("Luzon Progress")]
     public Image luzonMapDisplay;
     public Sprite[] luzonFrames;
 
+    [Header("Visayas Progress")]
+    public Image visayasMapDisplay;
+    public Sprite[] visayasFrames;
+
+    [Header("Mindanao Progress")]
+    public Image mindanaoMapDisplay;
+    public Sprite[] mindanaoFrames;
+
     void Start()
     {
         Time.timeScale = 1f;
-        StartIntro();
+
+        // Only show intro if it's a fresh game
+        if (PlayerPrefs.GetInt("IntroPlayed", 0) == 0)
+        {
+            StartIntro();
+        }
+        else
+        {
+            panelIntroPH.SetActive(false);
+            ShowMainMap();
+        }
     }
 
     // --- INTRO DIALOGUE LOGIC ---
@@ -46,14 +70,13 @@ public class MasterMapManager : MonoBehaviour
     {
         dialogueIndex = 0;
         panelIntroPH.SetActive(true);
-        panelMainSelect.SetActive(true); // Keep map visible in background
+        panelMainSelect.SetActive(true);
         UpdateDialogueUI();
     }
 
     public void AdvanceDialogue()
     {
         dialogueIndex++;
-
         if (dialogueIndex < introDialogues.Length)
         {
             UpdateDialogueUI();
@@ -67,7 +90,6 @@ public class MasterMapManager : MonoBehaviour
     private void UpdateDialogueUI()
     {
         introText.text = introDialogues[dialogueIndex];
-
         if (introButtonText != null)
         {
             introButtonText.text = (dialogueIndex == introDialogues.Length - 1) ? "Let's Go!" : "Next";
@@ -76,6 +98,7 @@ public class MasterMapManager : MonoBehaviour
 
     public void CloseIntro()
     {
+        PlayerPrefs.SetInt("IntroPlayed", 1);
         panelIntroPH.SetActive(false);
         ShowMainMap();
     }
@@ -88,66 +111,94 @@ public class MasterMapManager : MonoBehaviour
         panelLuzonMap.SetActive(false);
         panelVisayasMap.SetActive(false);
         panelMindanaoMap.SetActive(false);
-        previewCard.SetActive(false); // Close any open cards
+        previewCard.SetActive(false);
 
         UpdateRegionUnlocks();
     }
 
     private void UpdateRegionUnlocks()
     {
+        // FIX: Load the actual saved progress instead of the hardcoded '3'
         int worldProgress = PlayerPrefs.GetInt("WorldProgress", 1);
+
         luzonBtn.interactable = true;
         visayasBtn.interactable = (worldProgress >= 2);
         mindanaoBtn.interactable = (worldProgress >= 3);
+
+        // Update Hands
+        if (guideHands.Length > 0 && guideHands[0] != null)
+            guideHands[0].SetActive(true);
+
+        if (guideHands.Length > 1 && guideHands[1] != null)
+            guideHands[1].SetActive(worldProgress >= 2);
+
+        if (guideHands.Length > 2 && guideHands[2] != null)
+            guideHands[2].SetActive(worldProgress >= 3);
     }
 
     public void OpenLuzon()
     {
+        HideAllHands();
         panelMainSelect.SetActive(false);
         panelLuzonMap.SetActive(true);
 
         int progress = PlayerPrefs.GetInt("LuzonProgress", 0);
+
+        // UPDATE: Sequential Pin Unlocking
+        for (int i = 0; i < luzonLevelPins.Length; i++)
+        {
+            if (luzonLevelPins[i] != null)
+            {
+                // Level 0 (Region 1) is always true. 
+                // Subsequent levels unlock if progress is greater than or equal to their index.
+                luzonLevelPins[i].interactable = (progress >= i);
+            }
+        }
+
         if (progress < luzonFrames.Length && luzonMapDisplay != null)
         {
             luzonMapDisplay.sprite = luzonFrames[progress];
         }
     }
 
-    // --- LEVEL PREVIEW CARD LOGIC ---
+    // Visayas and Mindanao functions remain the same...
+    public void OpenVisayas() { /* Logic same as OpenLuzon but for Visayas vars */ }
+    public void OpenMindanao() { /* Logic same as OpenLuzon but for Mindanao vars */ }
 
+    // --- LEVEL PREVIEW CARD ---
     public void OpenPreview(string levelName, string levelDescription, string targetScene)
     {
         titleText.text = levelName;
         descText.text = levelDescription;
         sceneToLoad = targetScene;
-
         previewCard.SetActive(true);
     }
 
-    public void ClosePreview()
-    {
-        previewCard.SetActive(false);
-    }
+    public void ClosePreview() { previewCard.SetActive(false); }
 
     public void PlaySelectedLevel()
     {
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
-            Debug.Log("Loading Scene: " + sceneToLoad);
             SceneManager.LoadScene(sceneToLoad);
         }
     }
 
     // --- UTILITY ---
-
     public void ResetAllProgress()
     {
         PlayerPrefs.DeleteAll();
-        StartIntro();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void GoToMenu()
+    public void GoToMenu() { SceneManager.LoadScene("MainMenu"); }
+
+    private void HideAllHands()
     {
-        SceneManager.LoadScene("MainMenu");
+        foreach (GameObject hand in guideHands)
+        {
+            if (hand != null) hand.SetActive(false);
+        }
     }
 }

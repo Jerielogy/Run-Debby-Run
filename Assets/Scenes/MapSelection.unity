@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &17879956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &26995721
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4577,20 +4577,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7d3d76ca470244897310694c634b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSelectPanel: {fileID: 26995720}
-  luzonPanel: {fileID: 17879955}
-  visayasPanel: {fileID: 1833860029}
-  mindanaoPanel: {fileID: 1801327143}
-  regionButtons:
-  - {fileID: 148578605}
-  - {fileID: 567479965}
-  - {fileID: 1398366159}
-  - {fileID: 765271425}
-  - {fileID: 453127558}
-  - {fileID: 2065037503}
-  - {fileID: 1108342600}
-  - {fileID: 1753163092}
-  lockIcons: []
+  panelIntroPH: {fileID: 0}
+  introText: {fileID: 0}
+  introButtonText: {fileID: 0}
+  introDialogues: []
+  panelMainSelect: {fileID: 0}
+  panelLuzonMap: {fileID: 0}
+  panelVisayasMap: {fileID: 0}
+  panelMindanaoMap: {fileID: 0}
+  previewCard: {fileID: 0}
+  titleText: {fileID: 0}
+  descText: {fileID: 0}
+  luzonBtn: {fileID: 0}
+  visayasBtn: {fileID: 0}
+  mindanaoBtn: {fileID: 0}
+  luzonMapDisplay: {fileID: 0}
+  luzonFrames: []
 --- !u!4 &2047312346
 Transform:
   m_ObjectHideFlags: 0

@@ -109,19 +109,30 @@ public class GameManager : MonoBehaviour
     // --- REWARD & PROGRESSION ---
     void UnlockRewards()
     {
-        // 1. Unlock Photo
+        // 1. Unlock Photo (Your existing code)
         if (photoReward != null)
         {
             photoReward.Unlock();
             Debug.Log("WINNER! Unlocked Photo: " + photoReward.name);
         }
 
-        // 2. Unlock Next Map Region
+        // 2. NEW: Update Visual Map Progress (Turns the map Green)
+        // We increment this so the MasterMapManager knows to show the next sprite frame.
+        int currentLuzon = PlayerPrefs.GetInt("LuzonProgress", 0);
+        PlayerPrefs.SetInt("LuzonProgress", currentLuzon + 1);
+
+        // 3. Unlock Next Map Region (Updating your existing logic)
         if (regionToUnlockIndex > 0)
         {
+            // This unlocks the big regions (Luzon, Visayas, Mindanao)
+            // If finishing Luzon, we set WorldProgress to 2 to unlock Visayas.
+            PlayerPrefs.SetInt("WorldProgress", regionToUnlockIndex + 1);
+
+            // Keep your original save for region buttons if you use them
             PlayerPrefs.SetInt("RegionUnlocked_" + regionToUnlockIndex, 1);
+
             PlayerPrefs.Save();
-            Debug.Log("Map Region " + regionToUnlockIndex + " Unlocked!");
+            Debug.Log("Map Region " + regionToUnlockIndex + " Unlocked! WorldProgress is now: " + (regionToUnlockIndex + 1));
         }
     }
 
@@ -210,7 +221,7 @@ public class GameManager : MonoBehaviour
     public void GoToMapSelection()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MapSelection");
+        SceneManager.LoadScene("Map_Experimental");
     }
 
     private IEnumerator ShowLevelPopUp(string text)

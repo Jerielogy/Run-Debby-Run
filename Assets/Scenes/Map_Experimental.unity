@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 101478644}
   - component: {fileID: 101478643}
   - component: {fileID: 101478642}
+  - component: {fileID: 101478646}
   m_Layer: 5
   m_Name: Btn_Region3
   m_TagString: Untagged
@@ -724,6 +725,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101478640}
   m_CullTransparentMesh: 1
+--- !u!95 &101478646
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101478640}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &102034571
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,6 +759,7 @@ GameObject:
   - component: {fileID: 102034575}
   - component: {fileID: 102034574}
   - component: {fileID: 102034573}
+  - component: {fileID: 102034577}
   m_Layer: 5
   m_Name: Btn_NCR
   m_TagString: Untagged
@@ -873,6 +896,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102034571}
   m_CullTransparentMesh: 1
+--- !u!95 &102034577
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102034571}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &116154648
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1619,7 @@ GameObject:
   - component: {fileID: 524941809}
   - component: {fileID: 524941808}
   - component: {fileID: 524941807}
+  - component: {fileID: 524941811}
   m_Layer: 5
   m_Name: Btn_Region4B
   m_TagString: Untagged
@@ -1711,6 +1756,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524941805}
   m_CullTransparentMesh: 1
+--- !u!95 &524941811
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524941805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &532299871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1813,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &532299873
@@ -1826,7 +1892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8cb39b0f3674c4f48aac06e882bd0d65, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1d60344036b2cf46bd95ec9078aa492, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3145,6 +3211,7 @@ GameObject:
   - component: {fileID: 982615443}
   - component: {fileID: 982615442}
   - component: {fileID: 982615441}
+  - component: {fileID: 982615445}
   m_Layer: 5
   m_Name: Btn_Region2
   m_TagString: Untagged
@@ -3281,6 +3348,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982615439}
   m_CullTransparentMesh: 1
+--- !u!95 &982615445
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982615439}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1040233856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3382,7 @@ GameObject:
   - component: {fileID: 1040233860}
   - component: {fileID: 1040233859}
   - component: {fileID: 1040233858}
+  - component: {fileID: 1040233862}
   m_Layer: 5
   m_Name: Btn_Region1
   m_TagString: Untagged
@@ -3430,6 +3519,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040233856}
   m_CullTransparentMesh: 1
+--- !u!95 &1040233862
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040233856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1044238398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,6 +3687,7 @@ GameObject:
   - component: {fileID: 1047224011}
   - component: {fileID: 1047224010}
   - component: {fileID: 1047224009}
+  - component: {fileID: 1047224013}
   m_Layer: 5
   m_Name: Btn_Region4A
   m_TagString: Untagged
@@ -3713,6 +3824,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1047224007}
   m_CullTransparentMesh: 1
+--- !u!95 &1047224013
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047224007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1159142504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5006,6 +5138,7 @@ GameObject:
   - component: {fileID: 1535082324}
   - component: {fileID: 1535082323}
   - component: {fileID: 1535082322}
+  - component: {fileID: 1535082326}
   m_Layer: 5
   m_Name: Btn_CAR
   m_TagString: Untagged
@@ -5142,6 +5275,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535082320}
   m_CullTransparentMesh: 1
+--- !u!95 &1535082326
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535082320}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1546909435
 GameObject:
   m_ObjectHideFlags: 0
@@ -5287,6 +5441,7 @@ GameObject:
   - component: {fileID: 1577851325}
   - component: {fileID: 1577851324}
   - component: {fileID: 1577851323}
+  - component: {fileID: 1577851327}
   m_Layer: 5
   m_Name: Btn_Region5
   m_TagString: Untagged
@@ -5423,6 +5578,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577851321}
   m_CullTransparentMesh: 1
+--- !u!95 &1577851327
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577851321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 475b3078bf764b64f9b9bc3f12c0d491, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1583471687
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,28 +7192,14 @@ MonoBehaviour:
   - {fileID: 1577851324}
   luzonMapDisplay: {fileID: 1758967238}
   luzonFrames:
-  - {fileID: 21300000, guid: 3b44e693e30e6bd4180379ef79b72231, type: 3}
-  - {fileID: 21300000, guid: a8148a5d3e1672648a885e437b1bdd85, type: 3}
-  - {fileID: 21300000, guid: 075a33a3bf514d84b864310f8de4f9c5, type: 3}
-  - {fileID: 21300000, guid: af60a188e987bd3459aba2fca5aaa401, type: 3}
-  - {fileID: 21300000, guid: f72188b31b963164989d99b4206b89b3, type: 3}
-  - {fileID: 21300000, guid: dda3ab591fa217a40975432ef37f5bb1, type: 3}
-  - {fileID: 21300000, guid: 76e1f34be25b417479542cb4116c8d3a, type: 3}
-  - {fileID: 21300000, guid: 7f1f55f51d8f70c40b7e66c113a38abf, type: 3}
-  - {fileID: 21300000, guid: 2b877990cd68f634f8d448dfe0809e27, type: 3}
-  - {fileID: 21300000, guid: 613fc74e4fe28544684e6d7003dbfc81, type: 3}
-  - {fileID: 21300000, guid: 326a3fa1b09824b47a05bf04ff9aaf40, type: 3}
-  - {fileID: 21300000, guid: 09d28db5cd6553b488c5389a11b4efe6, type: 3}
-  - {fileID: 21300000, guid: 9e0d469206aa7e94ca92d71b2f21b41f, type: 3}
-  - {fileID: 21300000, guid: 9f00c6fb468e7bd44888e9fc65fe6bf0, type: 3}
-  - {fileID: 21300000, guid: bd592a4548c2a4c4e81774d14ddd2a38, type: 3}
-  - {fileID: 21300000, guid: d975259f4dfe6b7458db75c3b70a330a, type: 3}
-  - {fileID: 21300000, guid: dd1dd1d7548747a4ea48dc49cf56f9ee, type: 3}
-  - {fileID: 21300000, guid: d1a18bf7932c1c14a8a7266826f2254d, type: 3}
-  - {fileID: 21300000, guid: 25f56c6959d7791418b73c555ee18d57, type: 3}
-  - {fileID: 21300000, guid: 22eeb7c4f898d7c45b1435241f2dbf70, type: 3}
-  - {fileID: 21300000, guid: 89b6659b5a14b7343ad6fd4302c26716, type: 3}
-  - {fileID: 21300000, guid: ae16efb10f04352428d402f154c2b7c0, type: 3}
+  - {fileID: 21300000, guid: a6bc0930b677af24cb1c32d5f0e73e9c, type: 3}
+  - {fileID: 21300000, guid: 048b66d5a4c5ee64daac65162a1628d5, type: 3}
+  - {fileID: 21300000, guid: d11cb18dd61ca1648bf43a5d9a82c4ff, type: 3}
+  - {fileID: 21300000, guid: cf14d777e7b45374ca60df4b85880dc2, type: 3}
+  - {fileID: 21300000, guid: 9510f14ce0de5a845a946faafecbc55e, type: 3}
+  - {fileID: 21300000, guid: 43e609d2e6c37e645a7d9dbf37c66129, type: 3}
+  - {fileID: 21300000, guid: 2a9ae55be04618540a55f32a4777cdcc, type: 3}
+  - {fileID: 21300000, guid: f1cfd5389ec92844c94f3ab0e8f64562, type: 3}
   visayasMapDisplay: {fileID: 0}
   visayasFrames: []
   mindanaoMapDisplay: {fileID: 0}

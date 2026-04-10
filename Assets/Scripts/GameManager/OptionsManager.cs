@@ -1,110 +1,61 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro; // Required for the TextMeshPro text
+using TMPro; // Required for TMP_Dropdown
 
 public class OptionsManager : MonoBehaviour
 {
-    [Header("Audio Settings")]
-    public Slider musicSlider;
-    public Slider sfxSlider;
-
-    [Header("Control Selector")]
-    public TextMeshProUGUI controlDisplayText; // Assign your "Txt_CurrentControl" here
-
-    // The list of control modes. 
-    // 0 = Keyboard, 1 = Voice Control, 2 = Joystick (On-Screen)
-    private string[] controlNames = { "Keyboard", "Voice Control", "Joystick" };
-    private int currentIndex = 0;
+    [Header("UI Components")]
+    public TMP_Dropdown controlDropdown; // Assign your new Dropdown here
 
     void Start()
     {
-        // 1. Load Saved Music Volume (Default 1.0)
-        float savedMusic = PlayerPrefs.GetFloat("MusicVolume", 1f);
-        musicSlider.value = savedMusic;
+        // 1. Ensure the game isn't paused in the background
+        Time.timeScale = 1f;
 
-        // 2. Load Saved SFX Volume (Default 1.0)
-        float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 1f);
-        sfxSlider.value = savedSFX;
+        // 2. Load the saved Control Scheme (Default 0: Keyboard)
+        int savedScheme = PlayerPrefs.GetInt("ControlScheme", 0);
 
-        // 3. Load Saved Control Scheme (Default 0 - Keyboard)
-        currentIndex = PlayerPrefs.GetInt("ControlScheme", 0);
+        // 3. Update the dropdown visual to match the save
+        if (controlDropdown != null)
+        {
+            controlDropdown.value = savedScheme;
+            controlDropdown.RefreshShownValue();
 
-        // Safety check: ensure index is valid
-        if (currentIndex < 0 || currentIndex >= controlNames.Length)
-            currentIndex = 0;
-
-        UpdateControlDisplay();
+            // Link the function code-side so you don't forget in the Inspector
+            controlDropdown.onValueChanged.AddListener(delegate {
+                SaveControlScheme(controlDropdown.value);
+            });
+        }
     }
 
-    // --- AUDIO FUNCTIONS ---
-    // Link this to Music Slider -> OnValueChanged
-    public void SetMusicVolume(float value)
+    // --- DROPDOWN LOGIC ---
+    public void SaveControlScheme(int index)
     {
-        PlayerPrefs.SetFloat("MusicVolume", value);
-
-        // Update the actual sound immediately if the DJ exists
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.musicSource.volume = value;
-    }
-
-    // Link this to SFX Slider -> OnValueChanged
-    public void SetSFXVolume(float value)
-    {
-        PlayerPrefs.SetFloat("SFXVolume", value);
-
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.sfxSource.volume = value;
-    }
-
-    // --- SELECTOR LOGIC ---
-
-    // Link Left Button here with Parameter: -1
-    // Link Right Button here with Parameter: 1
-    public void CycleControlScheme(int direction)
-    {
-        currentIndex += direction;
-
-        // Infinite Loop Logic (Wrap Around)
-        if (currentIndex > controlNames.Length - 1)
-            currentIndex = 0; // Wrap to Start
-        else if (currentIndex < 0)
-            currentIndex = controlNames.Length - 1; // Wrap to End
-
-        // Save immediately
-        PlayerPrefs.SetInt("ControlScheme", currentIndex);
+        // Save the index: 0 = Keyboard, 1 = Voice Control, 2 = Joystick
+        PlayerPrefs.SetInt("ControlScheme", index);
         PlayerPrefs.Save();
 
-        // Update the screen text
-        UpdateControlDisplay();
-
-        Debug.Log("Control set to: " + controlNames[currentIndex]);
-    }
-
-    private void UpdateControlDisplay()
-    {
-        if (controlDisplayText != null)
-            controlDisplayText.text = controlNames[currentIndex];
+        Debug.Log("Control Scheme updated to index: " + index);
     }
 
     // --- NAVIGATION ---
     public void GoBack()
     {
-        // Check for transition manager to fade out nicely
-        if (SceneTransitionManager.Instance != null)
-            SceneTransitionManager.Instance.LoadScene("MainMenu");
-        else
-            SceneManager.LoadScene("MainMenu");
+        // Return to the Main Menu
+        SceneManager.LoadScene("MainMenu");
     }
 
+    // --- RESET PROGRESS ---
     public void ResetGameProgress()
     {
-        // Wipes all PlayerPrefs (LuzonProgress, WorldProgress, etc.)
+        // Wipes all levels, map colors, and intro progress
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
-        Debug.Log("Thesis progress has been reset!");
+        Debug.Log("Thesis Data Reset!");
 
-        // Optional: Add a sound effect here so the player knows it worked!
+        // Reload the scene to show the reset state
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

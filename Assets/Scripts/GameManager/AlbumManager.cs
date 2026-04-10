@@ -16,7 +16,9 @@ public class AlbumManager : MonoBehaviour
     public Image fullSizeImage;         // The large image inside the panel zoomed
     public Button closeButton;          // The close button
     public Button shareButton;          // The share button
-    
+    public PCPhotoManager pcShareScript; // Drag your _PCShareManager object here
+    public Image photoDisplayImage;    // Drag the UI Image that shows the photos here
+
 
 
     private PhotoData currentOpenPhoto; // Tracks which photo is open
@@ -80,7 +82,7 @@ public class AlbumManager : MonoBehaviour
         photoViewPanel.SetActive(true); // Show the popup
     }
 
-    void ClosePhotoView()
+    public void ClosePhotoView()
     {
         photoViewPanel.SetActive(false); // Hide the popup
     }
@@ -90,5 +92,22 @@ public class AlbumManager : MonoBehaviour
         if (currentOpenPhoto == null) return;
         Debug.Log("Sharing photo: " + currentOpenPhoto.photoName);
         // To be add sharing to other socmed platforms later
+    }
+
+    
+
+    // THIS is the function your button will call
+    public void ShareCurrentVisiblePhoto()
+    {
+        // 1. Check if there is a photo actually showing
+        if (photoDisplayImage != null && photoDisplayImage.sprite != null)
+        {
+            // 2. Pass the CURRENT sprite to the save script
+            pcShareScript.SaveAndOpenSocial(photoDisplayImage.sprite);
+        }
+        else
+        {
+            Debug.LogError("No photo found in the display image!");
+        }
     }
 }

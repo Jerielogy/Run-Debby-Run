@@ -74,6 +74,11 @@ public class GameManager : MonoBehaviour
         score += pointsToAdd;
         UpdateScoreText();
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayScore();
+        }
+
         // Level 2 Transition (Score 5)
         if (currentLevel == 1 && score >= 5)
         {

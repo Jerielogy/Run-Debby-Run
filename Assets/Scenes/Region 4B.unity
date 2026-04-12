@@ -5554,7 +5554,7 @@ Transform:
   m_GameObject: {fileID: 348570117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5853,7 +5853,7 @@ Transform:
   m_GameObject: {fileID: 519951330}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.7, z: 0}
+  m_LocalPosition: {x: 0, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8370,7 +8370,6 @@ MonoBehaviour:
   airSpawnPoint: {fileID: 348570118}
   groundPrefabs:
   - {fileID: 3765778236159447265, guid: 41cc2a32d4986a742a44fab125892b7a, type: 3}
-  - {fileID: 3738978824860056600, guid: 4059cf74967424c49a9f684af7589055, type: 3}
   airPrefabs:
   - {fileID: 6405730116232508830, guid: ecec23f2660e4d9499f4b070e1b33b78, type: 3}
   minSpawnTime: 1.5
@@ -8517,6 +8516,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1313008825}
     m_Modifications:
+    - target: {fileID: 492045620426291156, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 103.5585
+      objectReference: {fileID: 0}
+    - target: {fileID: 492045620426291156, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.6208
+      objectReference: {fileID: 0}
     - target: {fileID: 606363562787792778, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: gameHUD
       value: 
@@ -8528,6 +8535,10 @@ PrefabInstance:
     - target: {fileID: 757942239049263347, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_fontSizeBase
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1897838371221857203, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2107941747395038558, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Sprite
@@ -8613,6 +8624,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2289862123938386921, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5fbe0f1179fc2cd4393cc67919355f8c, type: 3}
     - target: {fileID: 4007915041617197157, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Name
       value: RegionIntroManager
@@ -8621,7 +8636,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4769847059854893249, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769847059854893249, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257923939390037546, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_text
+      value: Welcome to Region 4B! Crouch and avoid Palawan Flying Fox and jump over
+        Palawan Putat Tree and its fruits!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257923939390037546, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315662835564880453, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554136751803945231, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 93e615550a787ca4db76c94027b54f76, type: 3}
+    - target: {fileID: 8731014170434251945, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8756711593692413156, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861308874516890296, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

@@ -226,6 +226,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2289862123938386921, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cb2154bab85e5b94db3feb2d83b2c33a, type: 3}
     - target: {fileID: 4007915041617197157, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Name
       value: RegionIntroManager
@@ -234,7 +238,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5257923939390037546, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_text
+      value: Welcome to Region 4A! Jump over Lowland Stripe-Backed Shrew-Rat and
+        dodge Ilang-Ilang Tree and its flowers!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257923939390037546, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315662835564880453, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315662835564880453, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315662835564880453, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315662835564880453, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 7554136751803945231, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 559a4395f7e8be44e83bb3383eea526a, type: 3}
     - target: {fileID: 8756711593692413156, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861308874516890296, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

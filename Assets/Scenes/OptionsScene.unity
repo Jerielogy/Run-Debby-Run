@@ -347,18 +347,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 122365032}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1174065800}
+  m_Father: {fileID: 1454032176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 290.4, y: -177.8}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -20, y: 20}
   m_SizeDelta: {x: 60, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!95 &122365034
 Animator:
   serializedVersion: 5
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35bc2b46f34395948b0b7fdd011464ad, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ebd1c5fe1c4f1a4086690e5ac52f717, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -579,6 +579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlDropdown: {fileID: 1380799618}
+  musicSlider: {fileID: 2093887236}
+  sfxSlider: {fileID: 1642023082}
 --- !u!4 &304552934
 Transform:
   m_ObjectHideFlags: 0
@@ -1955,7 +1957,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 122365033}
   - {fileID: 2031722464}
   - {fileID: 1810039662}
   - {fileID: 2093887235}
@@ -2500,6 +2501,7 @@ RectTransform:
   - {fileID: 885320665}
   - {fileID: 332339082}
   - {fileID: 545058123}
+  - {fileID: 122365033}
   - {fileID: 1174065800}
   - {fileID: 1380799619}
   m_Father: {fileID: 0}

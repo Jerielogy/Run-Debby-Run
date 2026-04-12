@@ -2898,10 +2898,11 @@ MonoBehaviour:
   musicSource: {fileID: 979078797}
   sfxSource: {fileID: 979078796}
   backgroundMusic: {fileID: 8300000, guid: 9e6e07d531f84614b938de7c4dd153ad, type: 3}
-  jumpSound: {fileID: 8300000, guid: 61768a5565141254f83e1763490d6d4f, type: 3}
-  crouchSound: {fileID: 8300000, guid: 4dbdd5f11e670a94d919b060aca3419e, type: 3}
-  dieSound: {fileID: 8300000, guid: f0606e2ad0997fa46ab2e4cd49bd7786, type: 3}
+  jumpSound: {fileID: 8300000, guid: 67dc365bfd2f61c43b9bd35d61920fcc, type: 3}
+  crouchSound: {fileID: 8300000, guid: c4c5b2a5740c2f34d9f66434abfe4a03, type: 3}
+  dieSound: {fileID: 8300000, guid: 4cbec9acc0f923e418f1e75f834eaa95, type: 3}
   gameOverSound: {fileID: 8300000, guid: f07c2c4a474038b4bb85f44e803ab8c1, type: 3}
+  scoreSound: {fileID: 8300000, guid: 1f351c6be0eb6e348982e8ac34c26962, type: 3}
 --- !u!4 &979078799
 Transform:
   m_ObjectHideFlags: 0

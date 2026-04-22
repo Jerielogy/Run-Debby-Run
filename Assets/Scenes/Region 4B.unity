@@ -6572,7 +6572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photoReward: {fileID: 11400000, guid: d6d597c4445b2394b94457ac152452a3, type: 2}
-  regionToUnlockIndex: 1
+  regionToUnlockIndex: 5
   gameOverPanel: {fileID: 1522913849}
   levelCompletePanel: {fileID: 891560278}
   pauseMenuPanel: {fileID: 1764742344}

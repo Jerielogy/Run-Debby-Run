@@ -180,7 +180,7 @@ public class MasterMapManager : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(sceneToLoad))
         {
-            SceneManager.LoadScene(sceneToLoad);
+            SceneTransitionManager.Instance.LoadScene(sceneToLoad);
         }
     }
 
@@ -189,10 +189,10 @@ public class MasterMapManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneTransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void GoToMenu() { SceneManager.LoadScene("MainMenu"); }
+    public void GoToMenu() { SceneTransitionManager.Instance.LoadScene("MainMenu"); }
 
     private void HideAllHands()
     {

@@ -214,19 +214,19 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
         Time.timeScale = 1f; // Unfreeze before reloading
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneTransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void GoToMainMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneTransitionManager.Instance.LoadScene("MainMenu");
     }
 
     public void GoToMapSelection()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Map_Experimental");
+        SceneTransitionManager.Instance.LoadScene("Map_Experimental");
     }
 
     private IEnumerator ShowLevelPopUp(string text)

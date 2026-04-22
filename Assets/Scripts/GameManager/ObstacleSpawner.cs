@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
@@ -7,21 +5,27 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject[] obstaclePrefabs;
     public float startDelay = 2.0f;
     public float spawnInterval = 3.0f;
-    public float enemyYOffset = 2.0f;
-    public float spawnYPosition = -3.5f;
 
-    // --- THE FIX: REMOVED 'hasStarted' TO CLEAR THE WARNING ---
+    [Header("Lane Markers (Empty GameObjects)")]
+    public Transform spawnPoint1;
+    public Transform spawnPoint2;
+    public Transform spawnPoint3;
+
     private float timer;
 
     void Start()
     {
-        // We set the timer so the first spawn happens after the startDelay
+        // Safety check to make sure you didn't forget to assign the points
+        if (spawnPoint1 == null || spawnPoint2 == null || spawnPoint3 == null)
+        {
+            Debug.LogError("Gideon, you forgot to drag the spawn points into the Inspector!");
+        }
+
         timer = spawnInterval - startDelay;
     }
 
     void Update()
     {
-        // 1. HARD FREEZE: Stops spawning while the Region 1 Intro is open
         if (Time.timeScale == 0) return;
 
         timer += Time.deltaTime;
@@ -37,23 +41,27 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (obstaclePrefabs.Length == 0) return;
 
+        // 1. Pick a random obstacle
         int randomIndex = Random.Range(0, obstaclePrefabs.Length);
         GameObject prefabToSpawn = obstaclePrefabs[randomIndex];
 
-        float actualSpawnY = spawnYPosition;
+        // 2. Pick a random lane using the markers
+        Transform chosenLane = GetRandomLane();
 
-        // Uses your logic to lift "Enemy" types higher than ground hurdles
-        if (prefabToSpawn.name.ToLower().Contains("enemy"))
+        if (chosenLane != null)
         {
-            actualSpawnY += enemyYOffset;
+            // 3. Spawn at the marker's exact position
+            Instantiate(prefabToSpawn, chosenLane.position, prefabToSpawn.transform.rotation);
         }
+    }
 
-        Vector3 spawnPos = new Vector3(
-            transform.position.x,
-            actualSpawnY,
-            transform.position.z
-        );
+    // Helper function to pick one of the three transforms
+    Transform GetRandomLane()
+    {
+        int lane = Random.Range(0, 3); // Picks 0, 1, or 2
 
-        Instantiate(prefabToSpawn, spawnPos, prefabToSpawn.transform.rotation);
+        if (lane == 0) return spawnPoint1;
+        if (lane == 1) return spawnPoint2;
+        return spawnPoint3;
     }
 }

@@ -17,7 +17,7 @@ public class MainMenuManager : MonoBehaviour
     public void GoToOptions()
     {
         // Make sure your options scene is named "OptionsScene"
-        SceneManager.LoadScene("OptionsScene");
+        SceneTransitionManager.Instance.LoadScene("OptionsScene");
     }
 
     // This function is for your "Exit" button

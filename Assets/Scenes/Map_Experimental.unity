@@ -3097,7 +3097,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
+  m_AnchoredPosition: {x: 40, y: -40}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &532299873
@@ -3176,7 +3176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1d60344036b2cf46bd95ec9078aa492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cb39b0f3674c4f48aac06e882bd0d65, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4843,7 +4843,7 @@ GameObject:
   - component: {fileID: 945685444}
   - component: {fileID: 945685443}
   m_Layer: 5
-  m_Name: Btn_Region14
+  m_Name: Btn_RegionBARMM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4902,9 +4902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de41866058aff75459fca552e74a2b5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionName: Region 14
+  regionName: Region BARMM
   levelDescription: Autonomous region with strong Islamic heritage and governance.
-  sceneToLoad: Region 14
+  sceneToLoad: Region BARMM
 --- !u!114 &945685445
 MonoBehaviour:
   m_ObjectHideFlags: 0

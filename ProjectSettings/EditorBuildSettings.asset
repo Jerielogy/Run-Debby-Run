@@ -61,11 +61,11 @@ EditorBuildSettings:
     guid: 9f1630fb63296e146b293f2777c95865
   - enabled: 1
     path: Assets/Scenes/Region 12.unity
-    guid: ae26f1492c263f04d9e32c69ff59da59
-  - enabled: 1
-    path: Assets/Scenes/Region 13.unity
     guid: e7a5d3bf22fce13439b0304e65a7aeca
   - enabled: 1
-    path: Assets/Scenes/Region BARRM.unity
+    path: Assets/Scenes/Region 13.unity
+    guid: ae26f1492c263f04d9e32c69ff59da59
+  - enabled: 1
+    path: Assets/Scenes/Region BARMM.unity
     guid: b7ac77e174aab2d46b7adcfb8bf33a84
   m_configObjects: {}

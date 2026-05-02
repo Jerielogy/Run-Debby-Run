@@ -82,11 +82,11 @@ public class MasterMapManager : MonoBehaviour
         luzonBtn.gameObject.SetActive(true);
 
         // Visayas stays hidden until Region 5 is done[cite: 2]
-        bool isVisayasUnlocked = (luzonProgress >= 5 || worldProgress >= 2);
+        bool isVisayasUnlocked = (luzonProgress >= 7 || worldProgress >= 2);
         visayasBtn.gameObject.SetActive(isVisayasUnlocked);
 
         // Mindanao stays hidden until Region 8 is done[cite: 2]
-        bool isMindanaoUnlocked = (visayasProgress >= 8 || worldProgress >= 3);
+        bool isMindanaoUnlocked = (visayasProgress >= 10 || worldProgress >= 3);
         mindanaoBtn.gameObject.SetActive(isMindanaoUnlocked);
     }
 

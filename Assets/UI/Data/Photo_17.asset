@@ -15,5 +15,5 @@ MonoBehaviour:
   photoName: 
   photoID: 17
   regionName: Region Thirteen
-  fullImage: {fileID: 21300000, guid: fc12e34ef616f7448b0f33e55f5f0023, type: 3}
+  fullImage: {fileID: 21300000, guid: 35755272185b50f4abb06816e4f3aa40, type: 3}
   lockedIcon: {fileID: 21300000, guid: eaf10dd55184d714c9651688f512ff96, type: 3}

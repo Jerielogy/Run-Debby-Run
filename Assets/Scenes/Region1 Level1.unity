@@ -5488,7 +5488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0186599dcec5547a7b9bb031ba94b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredAccuracy: 0.386
+  requiredAccuracy: 0.4
 --- !u!114 &540310545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8259,6 +8259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompletePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4376655464066701615, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4915634961418202697, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8339,6 +8343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5647346500066681743, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff0ece0a252cb9147b89501ef1af0b5d, type: 3}
     - target: {fileID: 8808792051286521214, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

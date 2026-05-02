@@ -5149,6 +5149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompletePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4376655464066701615, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4915634961418202697, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5229,6 +5233,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5079901508401872501, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5647346500066681743, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5265,6 +5273,11 @@ RectTransform:
 --- !u!1 &270936428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5079901508401872501, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
+  m_PrefabInstance: {fileID: 270936425}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &270936429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4376655464066701615, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
   m_PrefabInstance: {fileID: 270936425}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &285911486
@@ -6900,7 +6913,7 @@ MonoBehaviour:
   photoReward: {fileID: 11400000, guid: 35ef08142fe57e94193ddf7d01163d7c, type: 2}
   regionToUnlockIndex: 4
   gameOverPanel: {fileID: 1700367512}
-  levelCompletePanel: {fileID: 0}
+  levelCompletePanel: {fileID: 270936429}
   pauseMenuPanel: {fileID: 1163443830}
   pauseButton: {fileID: 1059941699}
   levelPopUpText: {fileID: 1645580171}

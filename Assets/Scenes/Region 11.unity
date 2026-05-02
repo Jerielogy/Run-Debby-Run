@@ -173,7 +173,7 @@ MonoBehaviour:
   groundPrefabs:
   - {fileID: 6464174470695486674, guid: 4cdd08d057c93d24e942d670c42b68b9, type: 3}
   airPrefabs:
-  - {fileID: 7687934945259149465, guid: 45d884b20940974479b2396b4619d440, type: 3}
+  - {fileID: 3622687444825368995, guid: 3e058b421a7d6e645bce4904b2773945, type: 3}
   minSpawnTime: 1.5
   maxSpawnTime: 3
 --- !u!1 &174311748
@@ -5552,7 +5552,7 @@ Transform:
   m_GameObject: {fileID: 494721413}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.873, z: 0}
+  m_LocalPosition: {x: 0, y: -2.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5577,7 +5577,7 @@ GameObject:
   - component: {fileID: 540310547}
   - component: {fileID: 540310548}
   m_Layer: 0
-  m_Name: Debby
+  m_Name: Lakan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5651,7 +5651,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 34679ceb8516be04682adcdb1ca7de0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 659b503d44a836a489083c6fa648c6fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5744,7 +5744,7 @@ Animator:
   m_GameObject: {fileID: 540310535}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b23cacea49a68624193fac907e40ac9e, type: 2}
+  m_Controller: {fileID: 9100000, guid: d7c47ae624fcb5947803bb10a810cff7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5826,7 +5826,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 1.68}
+    oldSize: {x: 1.25, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5967,7 +5967,7 @@ Transform:
   m_GameObject: {fileID: 589880489}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.2, z: 0}
+  m_LocalPosition: {x: 0, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7053,8 +7053,8 @@ MonoBehaviour:
   levelPopUpText: {fileID: 1233653709}
   scoreText: {fileID: 1096019155}
   score: 0
-  scoreToWin: 15
-  worldSpeed: 4
+  scoreToWin: 30
+  worldSpeed: 5
   speedMultiplier: 1.5
   isGameOver: 0
   voiceController: {fileID: 540310544}
@@ -7722,6 +7722,10 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1897838371221857203, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2107941747395038558, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7806,6 +7810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2289862123938386921, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f4b585461c928594e9575cff08ea257c, type: 3}
     - target: {fileID: 4007915041617197157, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Name
       value: RegionIntroManager
@@ -7814,7 +7822,40 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5257923939390037546, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_text
+      value: Welcome to Region 12! Dodge every Flying Lemurs and Pitcher plants you
+        will encounter.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315662835564880453, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 48.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7492857101197433030, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 62e088783735e7447916a9fa5e7cd8ab, type: 3}
+    - target: {fileID: 7554136751803945231, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1a8ec5e616df255458847bdaac06519c, type: 3}
+    - target: {fileID: 7900176358125282706, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 54b78f1df88ba674f94eb2c84524d675, type: 3}
+    - target: {fileID: 8731014170434251945, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8756711593692413156, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8854503013604098927, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 11f863e93a10e3446bd20b8ced06d9ab, type: 3}
+    - target: {fileID: 8861308874516890296, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

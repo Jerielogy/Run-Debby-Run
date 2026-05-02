@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b93c9cc090c64c49b702dda61e1d3bf, type: 3}
+  m_Name: Question_13
+  m_EditorClassIdentifier: 
+  questionText: The Whale Shark is the largest fish in the sea, but it only eats
+    tiny plankton. Does each shark have a unique pattern of spots like a fingerprint,
+    or do they all look exactly the same?
+  optionA: 'Unique pattern of spots '
+  optionB: All look exactly the same
+  correctIndex: 0
+  triviaFact: 
+  exclusivePhoto: {fileID: 0}

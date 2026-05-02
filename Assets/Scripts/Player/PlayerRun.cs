@@ -14,8 +14,6 @@ public class PlayerRun : MonoBehaviour
 
     void FixedUpdate()
     {
-        // --- THE FIX: ADD THIS CHECK ---
-        // If the game is paused (Time.timeScale is 0) or the game is over, stop moving
         if (Time.timeScale == 0 || (GameManager.Instance != null && GameManager.Instance.isGameOver))
         {
             rb.velocity = new Vector2(0, rb.velocity.y);

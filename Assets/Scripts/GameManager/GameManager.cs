@@ -9,17 +9,16 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("Level Reward")]
-    public PhotoData photoReward; // The photo needed for the gallery
+    public PhotoData photoReward;
 
     [Header("Map Progression")]
-    [Tooltip("Which Region ID does this level unlock? (Set 1 to unlock CAR, 2 for Region 2, etc.)")]
     public int regionToUnlockIndex = 0;
 
     [Header("UI Panels")]
     public GameObject gameOverPanel;
-    public GameObject levelCompletePanel; // Win Screen
-    public GameObject pauseMenuPanel;     // Pause Screen
-    public GameObject pauseButton;        // Pause Button (||)
+    public GameObject levelCompletePanel;
+    public GameObject pauseMenuPanel;
+    public GameObject pauseButton;
 
     [Header("UI Text")]
     public TextMeshProUGUI levelPopUpText;
@@ -40,15 +39,13 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        // Setup Singleton
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
     void Start()
     {
-        // FORCE GLOBAL FREEZE AT START
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // FORCE GLOBAL FREEZE AT START
 
         isGameOver = false;
         score = 0;
@@ -57,13 +54,35 @@ public class GameManager : MonoBehaviour
 
         UpdateScoreText();
 
-        // Turn OFF the HUD (Score/Popups) so they don't show over the tutorial
         if (levelPopUpText != null) levelPopUpText.gameObject.SetActive(false);
+        StartCoroutine(ShowLevelPopUp("Level 1"));
 
-        // UI Setup
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (levelCompletePanel != null) levelCompletePanel.SetActive(false);
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
+    }
+
+    // --- NEW: GLOBAL UPDATE FOR INPUTS ---
+    void Update()
+    {
+        // Handle Escape key to pause or resume across all levels
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGameOver) return;
+
+            if (Time.timeScale > 0f)
+            {
+                PauseGame();
+            }
+            else
+            {
+                // Resume only if menu panel is inacive
+                if (pauseMenuPanel != null && pauseMenuPanel.activeSelf)
+                {
+                    ResumeGame();
+                }
+            }
+        }
     }
 
     // --- SCORE & LEVELING LOGIC ---
@@ -79,24 +98,19 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.PlayScore();
         }
 
-        // Level 2 Transition (Score 5)
         if (currentLevel == 1 && score >= 5)
         {
             currentLevel = 2;
             worldSpeed = initialWorldSpeed * speedMultiplier;
             StartCoroutine(ShowLevelPopUp("Level 2"));
-            Debug.Log("Level 2 reached! Speed Up.");
         }
-        // Level 3 Transition (Score 10)
         else if (currentLevel == 2 && score >= 10)
         {
             currentLevel = 3;
             worldSpeed *= speedMultiplier;
             StartCoroutine(ShowLevelPopUp("Level 3"));
-            Debug.Log("Level 3 reached! Speed Up.");
         }
 
-        // Win Condition
         if (score >= scoreToWin)
         {
             UnlockRewards();
@@ -106,35 +120,28 @@ public class GameManager : MonoBehaviour
 
     void UpdateScoreText()
     {
-        if (scoreText != null) { 
+        if (scoreText != null)
+        {
             scoreText.text = "Score: " + score;
         }
     }
 
-    // --- REWARD & PROGRESSION ---
     void UnlockRewards()
     {
         if (photoReward != null) photoReward.Unlock();
 
-        // LUZON: Levels 1 to 8
         if (regionToUnlockIndex >= 1 && regionToUnlockIndex <= 8)
         {
             PlayerPrefs.SetInt("LuzonProgress", regionToUnlockIndex);
-            // Gateway: If finishing Level 8 (Region 5), unlock Visayas
             if (regionToUnlockIndex == 8) PlayerPrefs.SetInt("WorldProgress", 2);
         }
-        // VISAYAS: Levels 9 to 12
         else if (regionToUnlockIndex >= 9 && regionToUnlockIndex <= 12)
         {
-            // Subtract 8 so the map sees progress as 1, 2, 3, or 4
             PlayerPrefs.SetInt("VisayasProgress", regionToUnlockIndex - 8);
-            // Gateway: If finishing Level 12 (Region NIR), unlock Mindanao
             if (regionToUnlockIndex == 12) PlayerPrefs.SetInt("WorldProgress", 3);
         }
-        // MINDANAO: Levels 13 to 18
         else if (regionToUnlockIndex >= 13 && regionToUnlockIndex <= 18)
         {
-            // Subtract 12 so the map sees progress as 1 through 6
             PlayerPrefs.SetInt("MindanaoProgress", regionToUnlockIndex - 12);
         }
 
@@ -147,7 +154,7 @@ public class GameManager : MonoBehaviour
     {
         if (isGameOver) return;
         isGameOver = true;
-        Time.timeScale = 0f; // Freeze
+        Time.timeScale = 0f;
 
         if (levelCompletePanel != null) levelCompletePanel.SetActive(true);
         if (pauseButton != null) pauseButton.SetActive(false);
@@ -155,29 +162,20 @@ public class GameManager : MonoBehaviour
         if (voiceController != null) voiceController.StopListening();
     }
 
-    // Called by PlayerCollision
     public void TriggerGameOverSequence()
     {
         if (isGameOver) return;
         isGameOver = true;
 
-        Debug.Log("Death sequence started . . . ");
-
-        // 1. Try to find Debby's script first
         PlayerController debby = FindObjectOfType<PlayerController>();
-        if (debby != null)
-        {
-            debby.TriggerDeathAnimation();
-        }
+        if (debby != null) debby.TriggerDeathAnimation();
         else
         {
-            // 2. If Debby isn't there, look for Alon's script
             SwimController alon = FindObjectOfType<SwimController>();
             if (alon != null) alon.TriggerDeathAnimation();
         }
 
         worldSpeed = 0;
-
         if (voiceController != null) voiceController.StopListening();
         StartCoroutine(ShowUIAfterDelay());
     }
@@ -185,29 +183,25 @@ public class GameManager : MonoBehaviour
     IEnumerator ShowUIAfterDelay()
     {
         yield return new WaitForSeconds(1.5f);
-
         if (gameOverPanel != null) gameOverPanel.SetActive(true);
         if (pauseButton != null) pauseButton.SetActive(false);
-
         Time.timeScale = 0f;
     }
 
     public void PauseGame()
     {
         if (isGameOver) return;
-
-        Time.timeScale = 0f; // Freeze
+        Time.timeScale = 0f; // Freeze game[cite: 1]
 
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
         if (pauseButton != null) pauseButton.SetActive(false);
 
-        // Disable voice while paused to prevent accidental jumps
         if (voiceController != null) voiceController.enabled = false;
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f; // Unfreeze
+        Time.timeScale = 1f; // Unfreeze game[cite: 1]
 
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
         if (pauseButton != null) pauseButton.SetActive(true);
@@ -219,7 +213,7 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        Time.timeScale = 1f; // Unfreeze before reloading
+        Time.timeScale = 1f;
         SceneTransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
 

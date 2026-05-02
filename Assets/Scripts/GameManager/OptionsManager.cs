@@ -70,9 +70,8 @@ public class OptionsManager : MonoBehaviour
     // --- NAVIGATION ---
     public void GoBack() { SceneTransitionManager.Instance.LoadScene("MainMenu"); }
 
-    // --- RESET PROGRESS LOGIC ---
+    // RESET PROGRESS LOGIC
 
-    // 1. Hook this to your Trash Can Button
     public void OpenResetConfirmation()
     {
         if (confirmationPanel != null)
@@ -81,17 +80,14 @@ public class OptionsManager : MonoBehaviour
         }
     }
 
-    // 2. Hook this to the "YES" button on your panel
     public void ConfirmReset()
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
 
-        // Reloads current scene to show the intro again and reset UI
         SceneTransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // 3. Hook this to the "NO" button on your panel
     public void CloseResetConfirmation()
     {
         if (confirmationPanel != null)

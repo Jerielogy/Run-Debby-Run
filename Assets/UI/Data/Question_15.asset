@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b93c9cc090c64c49b702dda61e1d3bf, type: 3}
+  m_Name: Question_15
+  m_EditorClassIdentifier: 
+  questionText: 'The Philippine Flying Lemur is a master of the rainforest canopy.
+    Can this animal actually flap its "wings" to fly like a bird, or does it glide
+    from tree to tree like a parachute? '
+  optionA: 'Glides like a parachute '
+  optionB: Flaps its wings to fly
+  correctIndex: 0
+  triviaFact: 
+  exclusivePhoto: {fileID: 0}

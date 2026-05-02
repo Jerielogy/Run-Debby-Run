@@ -206,8 +206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1755,7 +1755,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46a1ca6189aef874ea8b8ba7a645e43a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af61bd0a1b3f3614ab685e4ad06adb5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1953,10 +1953,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 72
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -4400,7 +4400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 46a1ca6189aef874ea8b8ba7a645e43a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af61bd0a1b3f3614ab685e4ad06adb5d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5472,6 +5472,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 76be4664e7231c24294b4b2be554e28c, type: 2}
   - {fileID: 11400000, guid: 51abb51099783c84e95f605bf53f366e, type: 2}
   - {fileID: 11400000, guid: 4a299fef165558649bbbe8786446a6bb, type: 2}
+  - {fileID: 11400000, guid: aa10a53605c85f041933234c553fbdc2, type: 2}
+  - {fileID: 11400000, guid: bd2f33c185f16cd4f9d620c8e9527576, type: 2}
+  - {fileID: 11400000, guid: 4e34bde4e916ace4c9f0619f99ad090c, type: 2}
+  - {fileID: 11400000, guid: 7bd4b8015eb3b6b4a830df02c7788c89, type: 2}
+  - {fileID: 11400000, guid: 16afa2a33c1e92f438d2887d1e417002, type: 2}
+  - {fileID: 11400000, guid: 7d0a90ace73646b4d96becdf4b15f552, type: 2}
+  - {fileID: 11400000, guid: d66e520e3ba3eb64f81b2abb6185d147, type: 2}
+  - {fileID: 11400000, guid: f609765056765f04ba9359f41313eaa9, type: 2}
+  - {fileID: 11400000, guid: 0f7b3cdec16f8b84087a9b3462c941b0, type: 2}
+  - {fileID: 11400000, guid: f848cde570007d94e89455ec461b353b, type: 2}
+  - {fileID: 11400000, guid: 2ee0be23f121bb140a657b2d7e3e2630, type: 2}
+  - {fileID: 11400000, guid: 58d0f67ac65abbd4abf3dee68438732b, type: 2}
+  - {fileID: 11400000, guid: 6c4e818cf91ff7343ae897f62443ee1a, type: 2}
+  - {fileID: 11400000, guid: c51f162dd9baea940a4f9b1b02f36578, type: 2}
+  - {fileID: 11400000, guid: bcd4432bef1c06b48b1d2fbe4c6b0d86, type: 2}
   debugMode: 1
 --- !u!4 &1613962315
 Transform:
@@ -5676,8 +5691,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -3.4994965, y: 3.8177}
+  m_SizeDelta: {x: 125.555, y: 66.5434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1704545889
 CanvasRenderer:
@@ -5734,10 +5749,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 32.25
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5810,8 +5825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -2.8632965, y: 3.4995}
+  m_SizeDelta: {x: 116.6471, y: 62.0893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1707956454
 CanvasRenderer:
@@ -5868,11 +5883,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 30.45
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -5977,12 +5992,86 @@ MonoBehaviour:
   triviaPanel: {fileID: 2139086522}
   factText: {fileID: 12189723}
   funFacts:
-  - The Philippine Eagle is one of the largest and rarest eagles in the world? With
-    a wingspan that can reach up to 7 feet!
-  - "The Tamaraw, a small, critically endangered dwarf water buffalo, is found only
-    on the island of Mindoro?\r"
-  - "Taal Lake in Batangas once held the world\u2019s only freshwater population
-    of the Sardine (Sardinella tawilis), but it is now critically endangered?"
+  - Did you know... The Marbled Water Monitor (Varanus marmoratus) is a master of
+    disguise? Found in Luzon and nearby islands, its skin is covered in intricate,
+    pale yellow spots that look like marbled stone, helping it vanish into the riverbanks.
+    They are excellent swimmers and can stay underwater for up to 30 minutes!
+  - Did you know... The Asian Palm Civet (Paradoxurus hermaphroditus) is the "coffee
+    connoisseur" of the forest? Locally known as Musang or Alamid, it eats the ripest
+    coffee cherries. The beans pass through its system and are collected to make
+    Kopi Luwak, one of the most expensive and rarest coffees in the world.
+  - Did you know... The Batanes Reed Warbler (Iduna baticata) is a true islander?
+    This tiny, melodic songbird lives exclusively on the northernmost islands of
+    the Philippines, like Batan and Itbayat. It thrives in the windy grasslands and
+    thickets where other birds might struggle to survive.
+  - Did you know... The Philippine Serpent-Eagle (Spilornis holospilus) is a specialized
+    hunter with "armor" on its legs? To protect itself from the venomous bites of
+    the snakes it hunts, it has thick, scaly skin on its feet and legs that acts
+    like a shield while it swoops through the forest canopy.
+  - Did you know... The Lowland Stripe-backed Shrew Rat (Chrotomys mindorensis) is
+    not your typical "pest" rat? This unique rodent is actually a specialized eater
+    that ignores cheese and grain in favor of earthworms! It uses its long snout
+    and sturdy claws to dig through the damp soil of Mindoro and Luzon.
+  - "Did you know... The Palawan Flying Fox (Acerodon leucotis) is like a giant gardener
+    with wings? Despite its \"fox\" name, it\u2019s a fruit bat that can have a wingspan
+    of nearly four feet! By flying long distances to eat fruit, it spreads seeds
+    across the islands, helping to regrow the Palawan rainforests."
+  - Did you know... The Bicol Narrow-mouthed Frog (Kaloula kalingensis) is a tiny
+    "balloon" of the forest? During the rainy season, these small frogs inflate their
+    bodies to look bigger and let out a loud, booming call that sounds much larger
+    than they actually are. They are found only in the lush southern tip of Luzon.
+  - Did you know... The Aspin gets its name from "Asong Pinoy," which simply means
+    Filipino Dog? They are a special mix of breeds known for being incredibly smart,
+    loyal, and naturally healthy!
+  - Did you know... The Manta Ray is the "brainiac" of the fish world? It has the
+    largest brain-to-body ratio of any fish and shows signs of self-awareness, like
+    recognizing its own reflection. Unlike stingrays, they have no venomous barb;
+    they use their massive wings to glide like underwater birds while filtering tiny
+    plankton.
+  - Did you know... The Dolphin is the ocean's ultimate acrobat? Certain species,
+    like the Spinner Dolphin, can leap and rotate their bodies up to seven times
+    in one jump. This isn't just for show; the spinning helps them shake off parasites
+    and communicate with their pod through the loud, echoing splashes they create.
+  - Did you know... The Eel has a "hidden" weapon straight out of a movie? Because
+    Moray Eels live in tight crevices and can't easily suck in food, they evolved
+    a second set of jaws in their throat. While the front teeth grip the prey, these
+    inner jaws spring forward, grab the meal, and pull it down into the stomach.
+  - "Did you know... The Sea Turtle is the ultimate \"time traveler\"? Using an internal
+    GPS that senses the Earth\u2019s magnetic field, they navigate thousands of miles
+    across the open sea. Remarkably, after decades of traveling, a female will return
+    to the exact same beach where she was born to lay her own eggs."
+  - "Did you know... The Whale Shark is a gentle giant with a \"starry\" secret?
+    Each shark has a unique pattern of white spots that acts like a human fingerprint,
+    allowing scientists to identify them individually. Despite being the largest
+    fish in the ocean\u2014growing as long as a large bus\u2014they have no interest
+    in hunting big prey and instead use 3,000 tiny teeth to filter-feed on microscopic
+    plankton. "
+  - Did you know... The Mindanao Gymnure is often called a "hairy hedgehog," but
+    it has a very different way of protecting itself? Instead of sharp quills, this
+    small mammal found on the mountains of Mindanao has a distinct, strong odor that
+    smells like rotten garlic or ammonia to ward off predators. It spends its nights
+    scurrying through the damp forest floor hunting for insects and earthworms.
+  - "Did you know... The Philippine Flying Lemur, or Kagwang, is a bit of a mystery\u2014it\u2019s
+    not actually a lemur, and it can\u2019t technically fly? It is a \"glider\" with
+    a massive flap of skin that stretches from its neck to its tail, acting like
+    a built-in parachute. This allows it to soar gracefully between trees for over
+    100 meters to find the tastiest young leaves in the rainforest canopy."
+  - Did you know... The Catfish is essentially a swimming tongue? Their entire bodies,
+    including their long "whiskers" or barbels, are covered in thousands of tiny
+    taste buds. This allows them to "taste" their surroundings and find food in muddy
+    or dark waters without ever needing to see it. Some species in the Philippines
+    can even breathe air or use their fins to "walk" across land to find new ponds!
+  - "Did you know... The Oriental Darter is known as the \"Snakebird\" for its incredible
+    hunting style? It has a long, slender neck that it keeps kinked like a spring;
+    when it sees a fish, it strikes with lightning speed, skewering the prey with
+    its sharp, needle-like beak. Unlike other water birds, its feathers aren't waterproof,
+    which helps it sink deeper underwater to hunt\u2014though it must spread its
+    wings to dry in the sun afterward."
+  - Did you know... The Tawi-Tawi Brown Dove is one of the rarest "ghosts" of the
+    forest? This shy bird lives only on a few tiny islands in the Sulu Archipelago
+    and spends most of its time on the forest floor rather than in the trees. Because
+    it is so rare and lives in such a small, specific area, seeing one in the wild
+    is a dream for birdwatchers and conservationists around the world.
   debugMode: 1
 --- !u!4 &1756796845
 Transform:

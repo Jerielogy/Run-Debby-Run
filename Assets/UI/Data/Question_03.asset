@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93c9cc090c64c49b702dda61e1d3bf, type: 3}
   m_Name: Question_03
   m_EditorClassIdentifier: 
-  questionText: The Taal Sardine (Sardinella Tawilis) is famous for being the world's
-    only known freshwater sardine species. Is it found in a lake located in Pampanga
-    or Batangas?
-  optionA: Pampanga
-  optionB: Batangas
-  correctIndex: 1
+  questionText: The Batanes Reed Warbler is a tiny songbird that lives only on the
+    northernmost islands of the Philippines. Does it prefer to live in windy grasslands
+    or deep underwater caves?
+  optionA: Windy grasslands
+  optionB: Deep underwater caves
+  correctIndex: 0
   triviaFact: 
   exclusivePhoto: {fileID: 0}

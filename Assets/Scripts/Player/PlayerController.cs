@@ -66,26 +66,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // --- JOYSTICK (Scheme 2) ---
+        
         if (controlSchemeIndex == 2)
         {
-            // JUMP: Usually Button 0 (A on Xbox, X on PS, Bottom Button on Generic)
+           
             if (Input.GetKeyDown(KeyCode.JoystickButton0) && isGrounded && !isCrouching)
             {
                 PerformJump();
             }
 
-            // CROUCH LOGIC (Stick OR Buttons)
-
-            // 1. Check Analog Stick (Requires "VerticalJoystick" setup in Input Manager)
+            
             float vAxis = Input.GetAxisRaw("VerticalJoystick");
             bool stickDown = (vAxis < -0.5f);
 
-            // 2. Check Face Buttons (Usually Circle/B is Button 1 or 2)
-            // Adjust these numbers if your specific controller uses different IDs
+            
             bool buttonDown = Input.GetKey(KeyCode.JoystickButton2) || Input.GetKey(KeyCode.JoystickButton1);
 
-            // 3. Trigger Crouch
+            
             if (stickDown || buttonDown)
             {
                 if (!isCrouching) StartCrouch();

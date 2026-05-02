@@ -8,9 +8,12 @@ public class OptionsManager : MonoBehaviour
     [Header("UI Components")]
     public TMP_Dropdown controlDropdown;
 
-    [Header("Audio Settings")] // NEW: Slider references
+    [Header("Audio Settings")]
     public Slider musicSlider;
     public Slider sfxSlider;
+
+    [Header("Reset Confirmation")] // NEW: Confirmation Panel Reference
+    public GameObject confirmationPanel;
 
     void Start()
     {
@@ -33,6 +36,9 @@ public class OptionsManager : MonoBehaviour
 
         float savedSFX = PlayerPrefs.GetFloat("SFXVolume", 1f);
         if (sfxSlider != null) sfxSlider.value = savedSFX;
+
+        // Ensure the panel is hidden on start
+        if (confirmationPanel != null) confirmationPanel.SetActive(false);
     }
 
     // --- AUDIO LOGIC ---
@@ -62,12 +68,35 @@ public class OptionsManager : MonoBehaviour
     }
 
     // --- NAVIGATION ---
-    public void GoBack() { SceneManager.LoadScene("MainMenu"); }
+    public void GoBack() { SceneTransitionManager.Instance.LoadScene("MainMenu"); }
 
-    public void ResetGameProgress()
+    // --- RESET PROGRESS LOGIC ---
+
+    // 1. Hook this to your Trash Can Button
+    public void OpenResetConfirmation()
+    {
+        if (confirmationPanel != null)
+        {
+            confirmationPanel.SetActive(true);
+        }
+    }
+
+    // 2. Hook this to the "YES" button on your panel
+    public void ConfirmReset()
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        // Reloads current scene to show the intro again and reset UI
+        SceneTransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    // 3. Hook this to the "NO" button on your panel
+    public void CloseResetConfirmation()
+    {
+        if (confirmationPanel != null)
+        {
+            confirmationPanel.SetActive(false);
+        }
     }
 }

@@ -114,31 +114,31 @@ public class GameManager : MonoBehaviour
     // --- REWARD & PROGRESSION ---
     void UnlockRewards()
     {
-        // 1. Unlock Photo (Your existing code)
-        if (photoReward != null)
+        if (photoReward != null) photoReward.Unlock();
+
+        // LUZON: Levels 1 to 8
+        if (regionToUnlockIndex >= 1 && regionToUnlockIndex <= 8)
         {
-            photoReward.Unlock();
-            Debug.Log("WINNER! Unlocked Photo: " + photoReward.name);
+            PlayerPrefs.SetInt("LuzonProgress", regionToUnlockIndex);
+            // Gateway: If finishing Level 8 (Region 5), unlock Visayas
+            if (regionToUnlockIndex == 8) PlayerPrefs.SetInt("WorldProgress", 2);
+        }
+        // VISAYAS: Levels 9 to 12
+        else if (regionToUnlockIndex >= 9 && regionToUnlockIndex <= 12)
+        {
+            // Subtract 8 so the map sees progress as 1, 2, 3, or 4
+            PlayerPrefs.SetInt("VisayasProgress", regionToUnlockIndex - 8);
+            // Gateway: If finishing Level 12 (Region NIR), unlock Mindanao
+            if (regionToUnlockIndex == 12) PlayerPrefs.SetInt("WorldProgress", 3);
+        }
+        // MINDANAO: Levels 13 to 18
+        else if (regionToUnlockIndex >= 13 && regionToUnlockIndex <= 18)
+        {
+            // Subtract 12 so the map sees progress as 1 through 6
+            PlayerPrefs.SetInt("MindanaoProgress", regionToUnlockIndex - 12);
         }
 
-        // 2. NEW: Update Visual Map Progress (Turns the map Green)
-        // We increment this so the MasterMapManager knows to show the next sprite frame.
-        int currentLuzon = PlayerPrefs.GetInt("LuzonProgress", 0);
-        PlayerPrefs.SetInt("LuzonProgress", currentLuzon + 1);
-
-        // 3. Unlock Next Map Region (Updating your existing logic)
-        if (regionToUnlockIndex > 0)
-        {
-            // This unlocks the big regions (Luzon, Visayas, Mindanao)
-            // If finishing Luzon, we set WorldProgress to 2 to unlock Visayas.
-            PlayerPrefs.SetInt("WorldProgress", regionToUnlockIndex + 1);
-
-            // Keep your original save for region buttons if you use them
-            PlayerPrefs.SetInt("RegionUnlocked_" + regionToUnlockIndex, 1);
-
-            PlayerPrefs.Save();
-            Debug.Log("Map Region " + regionToUnlockIndex + " Unlocked! WorldProgress is now: " + (regionToUnlockIndex + 1));
-        }
+        PlayerPrefs.Save();
     }
 
     // --- GAME STATES (Win, Lose, Pause) ---
@@ -162,13 +162,19 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
 
         Debug.Log("Death sequence started . . . ");
-        if (AudioManager.Instance != null)
-        {
-            AudioManager.Instance.PlayDeath();  
-        }
 
-        PlayerController player = FindObjectOfType<PlayerController>();
-        if (player != null) player.TriggerDeathAnimation();
+        // 1. Try to find Debby's script first
+        PlayerController debby = FindObjectOfType<PlayerController>();
+        if (debby != null)
+        {
+            debby.TriggerDeathAnimation();
+        }
+        else
+        {
+            // 2. If Debby isn't there, look for Alon's script
+            SwimController alon = FindObjectOfType<SwimController>();
+            if (alon != null) alon.TriggerDeathAnimation();
+        }
 
         worldSpeed = 0;
 

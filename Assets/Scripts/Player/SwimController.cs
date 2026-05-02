@@ -104,6 +104,11 @@ public class SwimController : MonoBehaviour
         if (collision.CompareTag("Water")) ExitWater();
     }
 
+    public void TriggerDeathAnimation()
+    {
+        Die();
+    }
+
     void EnterWater()
     {
         isSwimming = true;

@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 211214040}
   - component: {fileID: 211214039}
   m_Layer: 0
-  m_Name: Boracay Island 1
+  m_Name: LAKE SEBU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +453,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 349f12511106a5f4a833c43815bd8e7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fce8a229fda02974db9168baf0fe304e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -473,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 211214038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 1.53, z: 0}
+  m_LocalPosition: {x: 2.83, y: 1.53, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -504,7 +504,7 @@ Transform:
   m_GameObject: {fileID: 212445783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 1, z: 0}
+  m_LocalPosition: {x: 8, y: -0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5554,7 +5554,7 @@ GameObject:
   - component: {fileID: 540310549}
   - component: {fileID: 540310550}
   m_Layer: 0
-  m_Name: Alon
+  m_Name: Lakan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5628,7 +5628,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 47d819fa706fba243ac516fe50a0bb92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8d741396f8c0724c8ef05739d880ea9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5791,7 +5791,7 @@ Animator:
   m_GameObject: {fileID: 540310535}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 990699ad38edc004698321e2767fcff9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1067f5a7fd1b9d147ba27748622031fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5896,7 +5896,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 684912794}
   - {fileID: 1469229939}
   - {fileID: 1227563019}
   - {fileID: 895801628}
@@ -6090,11 +6089,11 @@ Transform:
   m_GameObject: {fileID: 684912793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -397.46512, y: -224.25, z: 13.628621}
-  m_LocalScale: {x: 0.28620103, y: 0.28620103, z: 0.28620103}
+  m_LocalPosition: {x: 5.2, y: 0.33, z: 10.170358}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 648868283}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &684912795
 SpriteRenderer:
@@ -6134,8 +6133,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 248920995
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 190b1897f48224f438c6f80cd5835d0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6559,8 +6558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39df8be4c9ca32d429af995e2fce421b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photoReward: {fileID: 11400000, guid: 38699b533c9bc7c4097d686ccb79eeb4, type: 2}
-  regionToUnlockIndex: 8
+  photoReward: {fileID: 11400000, guid: 2dbabcf995b6db845bf47991796803e3, type: 2}
+  regionToUnlockIndex: 16
   gameOverPanel: {fileID: 1469229938}
   levelCompletePanel: {fileID: 1227563018}
   pauseMenuPanel: {fileID: 810404187}
@@ -7233,14 +7232,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f3c83792a91f54e8468cbda1675f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
+  groundObstacles:
   - {fileID: 5969008046291030724, guid: 9bfb0c614d1f1f2469bb407e709124a8, type: 3}
+  animalObstacles:
   - {fileID: 2439730122724105303, guid: f3e862b16cff46e4a84b6498d5a6cdec, type: 3}
   startDelay: 2
   spawnInterval: 3
-  spawnPoint1: {fileID: 1433988346}
-  spawnPoint2: {fileID: 212445784}
-  spawnPoint3: {fileID: 1465716058}
+  topLane: {fileID: 1465716058}
+  midLane: {fileID: 1433988346}
+  bottomLane: {fileID: 212445784}
 --- !u!4 &1182851216
 Transform:
   m_ObjectHideFlags: 0
@@ -8514,7 +8514,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 858551955}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToMapSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8917,5 +8917,6 @@ SceneRoots:
   - {fileID: 858551954}
   - {fileID: 1252629866}
   - {fileID: 1878924743}
+  - {fileID: 684912794}
   - {fileID: 211214040}
   - {fileID: 970747028}

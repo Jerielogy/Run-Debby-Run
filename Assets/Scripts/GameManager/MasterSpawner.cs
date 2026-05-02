@@ -37,8 +37,8 @@ public class MasterSpawner : MonoBehaviour
 
     void SpawnRandomObstacle()
     {
-        // 1. Flip a Coin: Ground (0) or Air (1)?
-        // You can adjust this to make Ground more common (e.g., > 0.3f)
+        
+        // adjust this to make Ground more common (e.g., > 0.3f)
         bool spawnGround = Random.value > 0.4f; // 60% Chance for Ground, 40% Air
 
         if (spawnGround)
@@ -57,7 +57,7 @@ public class MasterSpawner : MonoBehaviour
         int index = Random.Range(0, groundPrefabs.Length);
 
         GameObject newObj = Instantiate(groundPrefabs[index], groundSpawnPoint.position, Quaternion.identity);
-        Destroy(newObj, 10f); // Lazy cleanup included
+        Destroy(newObj, 10f);
     }
 
     void SpawnAir()
@@ -66,7 +66,7 @@ public class MasterSpawner : MonoBehaviour
         int index = Random.Range(0, airPrefabs.Length);
 
         GameObject newObj = Instantiate(airPrefabs[index], airSpawnPoint.position, Quaternion.identity);
-        Destroy(newObj, 10f); // Lazy cleanup included
+        Destroy(newObj, 10f); 
     }
 
     void SetNextSpawnTime()

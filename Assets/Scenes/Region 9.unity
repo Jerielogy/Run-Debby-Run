@@ -473,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 211214038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: -2.06, z: 0}
+  m_LocalPosition: {x: 2.41, y: 0.63, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5554,7 +5554,7 @@ GameObject:
   - component: {fileID: 540310549}
   - component: {fileID: 540310550}
   m_Layer: 0
-  m_Name: Alon
+  m_Name: Lakan
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5628,7 +5628,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 47d819fa706fba243ac516fe50a0bb92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e8d741396f8c0724c8ef05739d880ea9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5791,7 +5791,7 @@ Animator:
   m_GameObject: {fileID: 540310535}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 990699ad38edc004698321e2767fcff9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1067f5a7fd1b9d147ba27748622031fa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6474,10 +6474,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39df8be4c9ca32d429af995e2fce421b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photoReward: {fileID: 11400000, guid: 38699b533c9bc7c4097d686ccb79eeb4, type: 2}
-  regionToUnlockIndex: 8
-  gameOverPanel: {fileID: 0}
-  levelCompletePanel: {fileID: 0}
+  photoReward: {fileID: 11400000, guid: 698c2e687b8b36644b13200490e6a3f4, type: 2}
+  regionToUnlockIndex: 13
+  gameOverPanel: {fileID: 1469229938}
+  levelCompletePanel: {fileID: 1227563018}
   pauseMenuPanel: {fileID: 810404187}
   pauseButton: {fileID: 895801627}
   levelPopUpText: {fileID: 1521494400}
@@ -7158,15 +7158,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f3c83792a91f54e8468cbda1675f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
+  groundObstacles:
   - {fileID: 5703105322175857696, guid: d4d2092e87b8edb4fbe9fc7d34a45aeb, type: 3}
-  - {fileID: 4727532587052751225, guid: dec6fbd80e93c29449bc95e83b626442, type: 3}
+  - {fileID: 5444683743463824959, guid: cd13384d3b3f8b546b5113297af485f0, type: 3}
+  - {fileID: 5344911303710836369, guid: f8ec6127b695fc84ea4537caf60f246d, type: 3}
   - {fileID: 543931152649108671, guid: 62e63b408e8d48b44acb115586b5b6ea, type: 3}
+  animalObstacles:
+  - {fileID: 4727532587052751225, guid: dec6fbd80e93c29449bc95e83b626442, type: 3}
   startDelay: 2
   spawnInterval: 3
-  spawnPoint1: {fileID: 1433988346}
-  spawnPoint2: {fileID: 212445784}
-  spawnPoint3: {fileID: 1465716058}
+  topLane: {fileID: 212445784}
+  midLane: {fileID: 1433988346}
+  bottomLane: {fileID: 1465716058}
 --- !u!4 &1182851216
 Transform:
   m_ObjectHideFlags: 0
@@ -8440,7 +8443,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 858551955}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToMapSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

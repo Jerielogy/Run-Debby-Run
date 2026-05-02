@@ -6766,7 +6766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   photoReward: {fileID: 11400000, guid: 72e7508fc2cd84e488db9292c1aa4e60, type: 2}
-  regionToUnlockIndex: 1
+  regionToUnlockIndex: 6
   gameOverPanel: {fileID: 2140627602}
   levelCompletePanel: {fileID: 785319881}
   pauseMenuPanel: {fileID: 1509650428}
@@ -7825,7 +7825,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 858551955}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToMapSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

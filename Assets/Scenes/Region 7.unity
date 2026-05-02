@@ -6559,8 +6559,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39df8be4c9ca32d429af995e2fce421b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photoReward: {fileID: 11400000, guid: 38699b533c9bc7c4097d686ccb79eeb4, type: 2}
-  regionToUnlockIndex: 8
+  photoReward: {fileID: 11400000, guid: 1064930ceb446f247b03beba1da0bb8c, type: 2}
+  regionToUnlockIndex: 10
   gameOverPanel: {fileID: 1469229938}
   levelCompletePanel: {fileID: 1227563018}
   pauseMenuPanel: {fileID: 810404187}
@@ -7042,11 +7042,11 @@ MonoBehaviour:
     parallaxFactor: 0.05
     yOffset: 0
     sortingOrder: -9
-  - name: Sea
-    layerSprite: {fileID: 21300000, guid: 81da8a39c70cecb43a82cf265c33c018, type: 3}
+  - name: Water
+    layerSprite: {fileID: 21300000, guid: e8e45ef82f7e4ad48b47c13ab64a0cff, type: 3}
     parallaxFactor: 0.05
-    yOffset: 0
-    sortingOrder: -9
+    yOffset: 0.5
+    sortingOrder: -8
 --- !u!4 &970747028
 Transform:
   m_ObjectHideFlags: 0
@@ -7243,15 +7243,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f3c83792a91f54e8468cbda1675f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
+  groundObstacles:
   - {fileID: 6422480619462401875, guid: 65c1efeef0347e24e8a89eee459b1f80, type: 3}
-  - {fileID: 4834616731364195616, guid: 78cc1fb895336a144922a8021b2f291e, type: 3}
+  - {fileID: 5992306080353207461, guid: b0c3fd3b60599be499fa1b3498cbba75, type: 3}
+  - {fileID: 6115250363121070447, guid: d9c9e577ff2c1694d9cc36f9b8b93579, type: 3}
   - {fileID: 3551295629626423368, guid: ccca84c12f0229b478614523235be0d6, type: 3}
+  animalObstacles:
+  - {fileID: 4834616731364195616, guid: 78cc1fb895336a144922a8021b2f291e, type: 3}
   startDelay: 2
   spawnInterval: 3
-  spawnPoint1: {fileID: 1433988346}
-  spawnPoint2: {fileID: 212445784}
-  spawnPoint3: {fileID: 1465716058}
+  topLane: {fileID: 212445784}
+  midLane: {fileID: 1433988346}
+  bottomLane: {fileID: 1465716058}
 --- !u!4 &1182851216
 Transform:
   m_ObjectHideFlags: 0
@@ -8525,7 +8528,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 858551955}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToMapSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

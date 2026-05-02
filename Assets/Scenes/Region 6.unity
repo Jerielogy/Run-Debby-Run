@@ -473,7 +473,7 @@ Transform:
   m_GameObject: {fileID: 211214038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 1.53, z: 0}
+  m_LocalPosition: {x: 9.7410145, y: 1.795, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5896,7 +5896,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 684912794}
   - {fileID: 1469229939}
   - {fileID: 1227563019}
   - {fileID: 895801628}
@@ -6075,7 +6074,7 @@ GameObject:
   - component: {fileID: 684912794}
   - component: {fileID: 684912795}
   m_Layer: 0
-  m_Name: bg (2)
+  m_Name: BORACAY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6090,11 +6089,11 @@ Transform:
   m_GameObject: {fileID: 684912793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -397.46512, y: -223.97275, z: 13.628621}
-  m_LocalScale: {x: 0.28620103, y: 0.28620103, z: 0.28620103}
+  m_LocalPosition: {x: 10.34, y: 0.8603363, z: 10.170358}
+  m_LocalScale: {x: 0.21357751, y: 0.21357751, z: 0.21357751}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 648868283}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &684912795
 SpriteRenderer:
@@ -6134,8 +6133,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 248920995
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f56778026710d37468f86e754599a465, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6559,8 +6558,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39df8be4c9ca32d429af995e2fce421b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photoReward: {fileID: 11400000, guid: 38699b533c9bc7c4097d686ccb79eeb4, type: 2}
-  regionToUnlockIndex: 8
+  photoReward: {fileID: 11400000, guid: 7ede33e041c1576458e897f21b2c136a, type: 2}
+  regionToUnlockIndex: 9
   gameOverPanel: {fileID: 1469229938}
   levelCompletePanel: {fileID: 1227563018}
   pauseMenuPanel: {fileID: 810404187}
@@ -7238,14 +7237,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f3c83792a91f54e8468cbda1675f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
+  groundObstacles:
+  - {fileID: 5418508257111112835, guid: 426b3fdfbcd21f64fa01310aa3b35e3a, type: 3}
   - {fileID: 6906631415976131134, guid: 08f984e9f224eb9428a9db9a46b99908, type: 3}
+  animalObstacles:
   - {fileID: 5040485690731958779, guid: 8d6bae4222894d94688fdb35911731dd, type: 3}
   startDelay: 2
   spawnInterval: 3
-  spawnPoint1: {fileID: 1433988346}
-  spawnPoint2: {fileID: 212445784}
-  spawnPoint3: {fileID: 1465716058}
+  topLane: {fileID: 212445784}
+  midLane: {fileID: 1433988346}
+  bottomLane: {fileID: 1465716058}
 --- !u!4 &1182851216
 Transform:
   m_ObjectHideFlags: 0
@@ -8519,7 +8520,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 858551955}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+        m_MethodName: GoToMapSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8922,5 +8923,6 @@ SceneRoots:
   - {fileID: 858551954}
   - {fileID: 1252629866}
   - {fileID: 1878924743}
+  - {fileID: 684912794}
   - {fileID: 211214040}
   - {fileID: 970747028}

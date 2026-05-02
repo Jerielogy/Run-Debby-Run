@@ -288,8 +288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 119}
-  m_SizeDelta: {x: 450, y: 600}
+  m_AnchoredPosition: {x: -227, y: 111}
+  m_SizeDelta: {x: 600, y: 800}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &16654682
 MonoBehaviour:
@@ -2200,7 +2200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 14
+  m_text: BARMM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0eaccc1d52b378e4ba82c931738099e8, type: 2}
   m_sharedMaterial: {fileID: -6017005306570028218, guid: 0eaccc1d52b378e4ba82c931738099e8, type: 2}
@@ -2227,8 +2227,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4339,8 +4339,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160.11401, y: 60.61}
-  m_SizeDelta: {x: 1056.672, y: 293.477}
+  m_AnchoredPosition: {x: 0, y: 60.61}
+  m_SizeDelta: {x: 1124.14, y: 293.477}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &764870593
 CanvasRenderer:
@@ -4867,7 +4867,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 105, y: -118}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &945685443
 Animator:
@@ -7111,8 +7111,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 16654681}
   - {fileID: 764870592}
+  - {fileID: 16654681}
   - {fileID: 1360787940}
   m_Father: {fileID: 1939358633}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10946,7 +10946,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7dfea783823d49a4a908f52ae3c40132, type: 3}
   - {fileID: 21300000, guid: b7ff8739e3661954c85b2fd598784ce8, type: 3}
   - {fileID: 21300000, guid: 855b2d3efaca132428ee64a68f379583, type: 3}
-  - {fileID: 21300000, guid: 8a7e9b60079cc084f822360cbf26d27e, type: 3}
+  - {fileID: 21300000, guid: df5696f86e08c6549966e90bd0564ba7, type: 3}
   mindanaoMapDisplay: {fileID: 913317428}
   mindanaoFrames:
   - {fileID: 21300000, guid: 75ee6eedb8963ca459374802d2ab4eba, type: 3}
@@ -10954,7 +10954,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e05667454bd7efa4bb7361433966d433, type: 3}
   - {fileID: 21300000, guid: eb080647b3066a746a20d51b2ddb68d4, type: 3}
   - {fileID: 21300000, guid: 9ecafc61fc7bcd6458ce5d32d63843cc, type: 3}
-  - {fileID: 21300000, guid: 3d3d2ec1ca91a30459d4da040141203f, type: 3}
+  - {fileID: 21300000, guid: 1cbf8a921cf425b448e94c1b91cd94b4, type: 3}
 --- !u!4 &2047312346
 Transform:
   m_ObjectHideFlags: 0

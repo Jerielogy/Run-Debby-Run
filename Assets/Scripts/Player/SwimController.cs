@@ -17,6 +17,7 @@ public class SwimController : MonoBehaviour
     public float normalGravity = 3f;
     public bool isSwimming = false;
     private bool isDead = false;
+    private bool canChangeLane = true;
 
     private Vector3 targetPosition;
 
@@ -65,9 +66,31 @@ public class SwimController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             ChangeLane(-1);
+
+        float joystickVertical = Input.GetAxisRaw("Vertical");
+
+        if (canChangeLane)
+        {
+            if (joystickVertical > 0.5f) // Flicked Up
+            {
+                ChangeLane(1);
+                canChangeLane = false; // "Lock" the input
+            }
+            else if (joystickVertical < -0.5f) // Flicked Down
+            {
+                ChangeLane(-1);
+                canChangeLane = false; // "Lock" the input[cite: 2]
+            }
+        }
+
+        // 3. Reset the "Lock" when the stick returns to the middle
+        if (Mathf.Abs(joystickVertical) < 0.1f)
+        {
+            canChangeLane = true;
+        }
     }
 
-    void ChangeLane(int direction)
+    public  void ChangeLane(int direction)
     {
         if (animator != null)
         {
@@ -90,7 +113,7 @@ public class SwimController : MonoBehaviour
         rb.gravityScale = normalGravity;
 
         if (animator != null) animator.SetTrigger("Die");
-        // Add your AudioManager call here if needed
+        if (AudioManager.Instance != null) AudioManager.Instance.PlayDeath();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

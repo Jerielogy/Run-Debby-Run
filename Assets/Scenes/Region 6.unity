@@ -320,7 +320,7 @@ PrefabInstance:
       objectReference: {fileID: 26485362}
     - target: {fileID: 1897838371221857203, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2107941747395038558, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Sprite
@@ -451,10 +451,22 @@ PrefabInstance:
       propertyPath: m_text
       value: Press Up Arrow Key to go top water lane.
       objectReference: {fileID: 0}
+    - target: {fileID: 7492857101197433030, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e080f7197da452b43b4174fdb883be68, type: 3}
     - target: {fileID: 7554136751803945231, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 93879691fa6dbcd429c8fb4f1714d3d8, type: 3}
+    - target: {fileID: 7900176358125282706, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 204f8f860554bda48ac3e3a502afdf05, type: 3}
+    - target: {fileID: 8652613806109475141, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -48.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8731014170434251945, guid: 4749d8dc6d3ab0b44873c64cb2e3e5ff, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -6120,10 +6132,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 26485363}
   - {fileID: 1469229939}
   - {fileID: 895801628}
   - {fileID: 1799897847}
-  - {fileID: 26485363}
   - {fileID: 127776606}
   - {fileID: 79775157}
   m_Father: {fileID: 0}

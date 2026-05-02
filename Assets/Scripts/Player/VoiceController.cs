@@ -6,18 +6,18 @@ using System.Linq;
 
 public class VoiceController : MonoBehaviour
 {
-    public static VoiceController Instance; // Needed for other scripts to find this
+    public static VoiceController Instance;
 
-    // --- SETTINGS ---
     [Header("Sensitivity")]
-    [Tooltip("Higher = Strict. Lower = Easy.")]
     [Range(0.0f, 1.0f)]
     public float requiredAccuracy = 0.6f;
 
-    // --- INTERNAL VARIABLES ---
     private KeywordRecognizer recognizer;
     private Dictionary<string, System.Action> actions = new Dictionary<string, System.Action>();
-    private PlayerController player;
+
+    // --- HOLD BOTH REFERENCES ---
+    private PlayerController player; // For Debby[cite: 1, 2]
+    private SwimController swimPlayer; // For Alon
 
     void Awake()
     {
@@ -26,19 +26,22 @@ public class VoiceController : MonoBehaviour
 
     void Start()
     {
-        // 1. Link to Player
+        // 1. Flexible Link: Search for whoever is in this region
         player = FindObjectOfType<PlayerController>();
+        swimPlayer = FindObjectOfType<SwimController>();
 
-        // 2. Define Commands (Filipino & English)
-        AddCommand("talon", Jump);
-        AddCommand("jump", Jump);
-        AddCommand("up", Jump);
+        // 2. Commands for UP/JUMP
+        AddCommand("talon", MoveUp);
+        AddCommand("jump", MoveUp);
+        AddCommand("up", MoveUp);
+        AddCommand("angat", MoveUp); // Filipino command for Alon
 
-        AddCommand("yuko", Crouch);
-        AddCommand("crouch", Crouch);
-        AddCommand("down", Crouch);
+        // 3. Commands for DOWN/CROUCH[cite: 2]
+        AddCommand("yuko", MoveDown);
+        AddCommand("crouch", MoveDown);
+        AddCommand("down", MoveDown);
+        AddCommand("baba", MoveDown); // Filipino command for Alon[cite: 2]
 
-        // 3. Start Listening 
         if (actions.Count > 0)
         {
             recognizer = new KeywordRecognizer(actions.Keys.ToArray(), ConfidenceLevel.Low);
@@ -48,41 +51,42 @@ public class VoiceController : MonoBehaviour
         }
     }
 
-    // --- THE BRAIN ---
     private void OnVoiceDetected(PhraseRecognizedEventArgs speech)
     {
         float accuracy = GetAccuracyNumber(speech.confidence);
-        Debug.Log($"Heard: '{speech.text}' (Accuracy: {accuracy})");
+        if (accuracy < requiredAccuracy) return;
 
-        if (accuracy < requiredAccuracy) return; // Ignore if mumbled
-
-        actions[speech.text].Invoke(); // Do the action
+        actions[speech.text].Invoke();
     }
 
-    // --- ACTIONS ---
-    void Jump() { if (player) player.Jump(); }
-    void Crouch()
+    // --- SMART ACTIONS ---
+    void MoveUp()
+    {
+        if (player) player.Jump(); // Debby jumps[cite: 2]
+        if (swimPlayer) swimPlayer.ChangeLane(1); // Alon swims up[cite: 2]
+    }
+
+    void MoveDown()
     {
         if (player)
         {
             player.Crouch();
             Invoke("StandUp", 1.0f);
         }
+        if (swimPlayer) swimPlayer.ChangeLane(-1); // Alon dives down[cite: 2]
     }
+
     void StandUp() { if (player) player.ReleaseCrouch(); }
 
-    // --- THE MISSING FUNCTION (Added this back!) ---
     public void StopListening()
     {
         if (recognizer != null && recognizer.IsRunning)
         {
             recognizer.Stop();
             recognizer.Dispose();
-            Debug.Log("Voice Control Stopped.");
         }
     }
 
-    // --- HELPERS ---
     void AddCommand(string word, System.Action method)
     {
         if (!actions.ContainsKey(word)) actions.Add(word, method);

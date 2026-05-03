@@ -3,22 +3,25 @@ using UnityEngine;
 public class MasterSpawner : MonoBehaviour
 {
     [Header("Spawn Points")]
-    public Transform groundSpawnPoint; // Drag Spawner_Ground here
-    public Transform airSpawnPoint;    // Drag Spawner_Air here
+    public Transform groundSpawnPoint;
+    public Transform airSpawnPoint;
 
     [Header("Obstacle Prefabs")]
-    public GameObject[] groundPrefabs; // Rocks, Dunes, Deer
-    public GameObject[] airPrefabs;    // Birds, Bats
+    public GameObject[] groundPrefabs;
+    public GameObject[] airPrefabs;
 
     [Header("Global Timing")]
     public float minSpawnTime = 1.5f;
     public float maxSpawnTime = 3.0f;
 
+    [Header("Voice Control Adjustment")]
+    [Tooltip("How much to multiply spawn time when using voice (e.g., 2.0 doubles the wait time).")]
+    public float voiceTimeMultiplier = 2.0f;
+
     private float timer;
 
     void Start()
     {
-        // Start the timer
         SetNextSpawnTime();
     }
 
@@ -37,18 +40,10 @@ public class MasterSpawner : MonoBehaviour
 
     void SpawnRandomObstacle()
     {
-        
-        // adjust this to make Ground more common (e.g., > 0.3f)
-        bool spawnGround = Random.value > 0.4f; // 60% Chance for Ground, 40% Air
+        bool spawnGround = Random.value > 0.4f;
 
-        if (spawnGround)
-        {
-            SpawnGround();
-        }
-        else
-        {
-            SpawnAir();
-        }
+        if (spawnGround) SpawnGround();
+        else SpawnAir();
     }
 
     void SpawnGround()
@@ -66,11 +61,20 @@ public class MasterSpawner : MonoBehaviour
         int index = Random.Range(0, airPrefabs.Length);
 
         GameObject newObj = Instantiate(airPrefabs[index], airSpawnPoint.position, Quaternion.identity);
-        Destroy(newObj, 10f); 
+        Destroy(newObj, 10f);
     }
 
     void SetNextSpawnTime()
     {
-        timer = Random.Range(minSpawnTime, maxSpawnTime);
+        // 1. Calculate the base random time
+        float randomTime = Random.Range(minSpawnTime, maxSpawnTime);
+
+        // 2. If VoiceController is active and enabled, apply the multiplier[cite: 1]
+        if (VoiceController.Instance != null && VoiceController.Instance.enabled)
+        {
+            randomTime *= voiceTimeMultiplier;
+        }
+
+        timer = randomTime;
     }
 }

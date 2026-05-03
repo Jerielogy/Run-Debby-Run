@@ -5,7 +5,6 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    // --- 1. SINGLETON (Critical for other scripts to find this) ---
     public static GameManager Instance;
 
     [Header("Level Reward")]
@@ -13,6 +12,12 @@ public class GameManager : MonoBehaviour
 
     [Header("Map Progression")]
     public int regionToUnlockIndex = 0;
+
+    [Header("Regional Scoring")]
+    public string currentRegion = "Luzon";
+    private int level2ScoreTarget;
+    private int level3ScoreTarget;
+    private int winScoreTarget;
 
     [Header("UI Panels")]
     public GameObject gameOverPanel;
@@ -45,7 +50,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 0f; // FORCE GLOBAL FREEZE AT START
+        SetupRegionTargets();
+
+        Time.timeScale = 0f;
 
         isGameOver = false;
         score = 0;
@@ -62,10 +69,32 @@ public class GameManager : MonoBehaviour
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
     }
 
-    // --- NEW: GLOBAL UPDATE FOR INPUTS ---
+    void SetupRegionTargets()
+    {
+        if (currentRegion == "Luzon")
+        {
+            level2ScoreTarget = 5;
+            level3ScoreTarget = 10;
+            winScoreTarget = 15;
+        }
+        else if (currentRegion == "Visayas")
+        {
+            level2ScoreTarget = 5;
+            level3ScoreTarget = 15;
+            winScoreTarget = 25;
+        }
+        else if (currentRegion == "Mindanao")
+        {
+            level2ScoreTarget = 10;
+            level3ScoreTarget = 20;
+            winScoreTarget = 30;
+        }
+
+        scoreToWin = winScoreTarget;
+    }
+
     void Update()
     {
-        // Handle Escape key to pause or resume across all levels
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGameOver) return;
@@ -76,7 +105,6 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                // Resume only if menu panel is inacive
                 if (pauseMenuPanel != null && pauseMenuPanel.activeSelf)
                 {
                     ResumeGame();
@@ -85,7 +113,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // --- SCORE & LEVELING LOGIC ---
     public void AddScore(int pointsToAdd)
     {
         if (isGameOver || Time.timeScale == 0f) return;
@@ -98,13 +125,13 @@ public class GameManager : MonoBehaviour
             AudioManager.Instance.PlayScore();
         }
 
-        if (currentLevel == 1 && score >= 5)
+        if (currentLevel == 1 && score >= level2ScoreTarget)
         {
             currentLevel = 2;
             worldSpeed = initialWorldSpeed * speedMultiplier;
             StartCoroutine(ShowLevelPopUp("Level 2"));
         }
-        else if (currentLevel == 2 && score >= 10)
+        else if (currentLevel == 2 && score >= level3ScoreTarget)
         {
             currentLevel = 3;
             worldSpeed *= speedMultiplier;
@@ -148,8 +175,6 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    // --- GAME STATES (Win, Lose, Pause) ---
-
     public void WinLevel()
     {
         if (isGameOver) return;
@@ -191,7 +216,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         if (isGameOver) return;
-        Time.timeScale = 0f; // Freeze game[cite: 1]
+        Time.timeScale = 0f;
 
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(true);
         if (pauseButton != null) pauseButton.SetActive(false);
@@ -199,17 +224,23 @@ public class GameManager : MonoBehaviour
         if (voiceController != null) voiceController.enabled = false;
     }
 
+    public void TogglePauseMenu(bool isPaused)
+    {
+        if (pauseMenuPanel != null)
+        {
+            pauseMenuPanel.SetActive(isPaused);
+        }
+    }
+
     public void ResumeGame()
     {
-        Time.timeScale = 1f; // Unfreeze game[cite: 1]
+        Time.timeScale = 1f;
 
         if (pauseMenuPanel != null) pauseMenuPanel.SetActive(false);
         if (pauseButton != null) pauseButton.SetActive(true);
 
         if (voiceController != null) voiceController.enabled = true;
     }
-
-    // --- SCENE MANAGEMENT ---
 
     public void RestartLevel()
     {

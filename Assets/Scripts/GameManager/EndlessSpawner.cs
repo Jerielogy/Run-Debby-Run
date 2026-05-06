@@ -2,58 +2,56 @@ using UnityEngine;
 
 public class EndlessSpawner : MonoBehaviour
 {
-    [Header("Spawn Settings")]
-    public GameObject[] obstacles; // Drag your obstacle prefabs here
-    public Transform spawnPoint;   // Position off-screen to the right
+    public GameObject[] obstacles;
+    public Transform spawnPoint;
 
-    [Header("Timing")]
-    public float minDelay = 1.2f;
-    public float maxDelay = 2.5f;
+    public float minDelay = 3f;
+    public float maxDelay = 6f;
 
     private float nextSpawnTime;
-    private float baseSpeed = 5f; // Matches the starting speed in EndlessManager
 
     void Start()
     {
-        CalculateNextSpawn();
+        SetNextSpawnTime();
     }
 
     void Update()
     {
-        // 1. Stop spawning if the game is over
-        if (EndlessManager.Instance == null || EndlessManager.Instance.isGameOver)
-            return;
+        if (EndlessManager.Instance == null || EndlessManager.Instance.isGameOver || EndlessManager.Instance.isCountingDown) return;
 
-        // 2. Check if it's time to spawn the next obstacle
         if (Time.time >= nextSpawnTime)
         {
+            // --- THE FIX: GLOBAL GAP CHECK ---
+            // If another spawner JUST spawned something, push our spawn time back slightly
+            float timeSinceLastGlobalSpawn = Time.time - EndlessManager.Instance.lastSpawnTime;
+
+            if (timeSinceLastGlobalSpawn < EndlessManager.Instance.minGapBetweenSpawners)
+            {
+                // Delay this specific spawn by a tiny bit so they don't overlap
+                nextSpawnTime = Time.time + 0.5f;
+                return;
+            }
+
             SpawnObstacle();
-            CalculateNextSpawn();
+            SetNextSpawnTime();
         }
     }
 
     void SpawnObstacle()
     {
-        if (obstacles.Length == 0) return;
+        // Change obstacles.length to obstacles.Length
+        int randomIndex = Random.Range(0, obstacles.Length);
+        Instantiate(obstacles[randomIndex], spawnPoint.position, Quaternion.identity);
 
-        // Pick a random obstacle from the array
-        int index = Random.Range(0, obstacles.Length);
-
-        // Instantiate at the spawn point
-        GameObject newObstacle = Instantiate(obstacles[index], spawnPoint.position, Quaternion.identity);
-
-        // Ensure it gets cleaned up after 10 seconds if it somehow misses the destruction trigger
-        Destroy(newObstacle, 10f);
+        EndlessManager.Instance.lastSpawnTime = Time.time;
     }
 
-    void CalculateNextSpawn()
+    void SetNextSpawnTime()
     {
-        // Difficulty Scaling: 
-        // As worldSpeed increases, the delay decreases so obstacles don't feel too far apart.
-        float currentSpeed = EndlessManager.Instance.worldSpeed;
-        float speedFactor = baseSpeed / currentSpeed;
+        // Adjusts spawn frequency based on world speed
+        float currentSpeed = Mathf.Max(EndlessManager.Instance.worldSpeed, 1f);
+        float speedFactor = 5f / currentSpeed;
 
-        float randomDelay = Random.Range(minDelay, maxDelay) * speedFactor;
-        nextSpawnTime = Time.time + randomDelay;
+        nextSpawnTime = Time.time + Random.Range(minDelay, maxDelay) * speedFactor;
     }
 }

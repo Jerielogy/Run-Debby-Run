@@ -4,45 +4,35 @@ public class EndlessBackground : MonoBehaviour
 {
     [Header("Parallax Settings")]
     [Range(0, 1)]
-    [Tooltip("0 = static, 1 = moves as fast as the player")]
     public float parallaxFactor;
 
-    private float length;
-    private float startPos;
+    private SpriteRenderer sr;
+    private Material mat;
+    private Vector2 offset;
 
     void Start()
     {
-        startPos = transform.position.x;
-
-        // Ensure the SpriteRenderer is attached to get the width
-        if (GetComponent<SpriteRenderer>() != null)
-        {
-            length = GetComponent<SpriteRenderer>().bounds.size.x;
-        }
-        else
-        {
-            Debug.LogError("EndlessBackground needs a SpriteRenderer to loop correctly!");
-        }
+        sr = GetComponent<SpriteRenderer>();
+        // We create a unique material instance so layers don't scroll together
+        mat = sr.material;
     }
 
     void Update()
     {
-        // 1. Safety check for the Manager and Game Over state
-        if (EndlessManager.Instance == null || EndlessManager.Instance.isGameOver)
-            return;
+        if (EndlessManager.Instance == null || EndlessManager.Instance.isGameOver) return;
 
-        // 2. Calculate movement based on the Manager's global speed
-        // This ensures the background speeds up as the game gets harder
-        float distance = (EndlessManager.Instance.worldSpeed * parallaxFactor * Time.time);
+        // Instead of moving the object, we move the texture offset
+        // This creates a perfect, infinite loop on a single object
+        float moveSpeed = EndlessManager.Instance.worldSpeed * parallaxFactor * 0.1f;
+        offset.x += moveSpeed * Time.deltaTime;
 
-        // 3. Apply movement
-        transform.position = new Vector3(startPos - distance, transform.position.y, transform.position.z);
+        // Apply the offset to the main texture
+        mat.mainTextureOffset = offset;
+    }
 
-        // 4. Seamless Loop Logic
-        // If the image moves past its own width, reset the starting position forward
-        if (transform.position.x <= startPos - length)
-        {
-            startPos += length;
-        }
+    // Cleanup to prevent material leaks
+    void OnDestroy()
+    {
+        if (mat != null) Destroy(mat);
     }
 }

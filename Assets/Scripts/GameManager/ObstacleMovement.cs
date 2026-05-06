@@ -4,16 +4,14 @@ public class ObstacleMovement : MonoBehaviour
 {
     void Update()
     {
-        if (EndlessManager.Instance != null && !EndlessManager.Instance.isGameOver)
-        {
-            // Move left based on the manager's global speed
-            transform.Translate(Vector2.left * EndlessManager.Instance.worldSpeed * Time.deltaTime);
-        }
+        if (EndlessManager.Instance == null || EndlessManager.Instance.isGameOver) return;
 
-        // Cleanup: Destroy if it moves too far off-screen
-        if (transform.position.x < -15f)
-        {
-            Destroy(gameObject);
-        }
+        // Use the EXACT same math as the background layer it sits on
+        float speed = EndlessManager.Instance.worldSpeed * 0.9f;
+
+        // Move LEFT
+        transform.position += Vector3.left * speed * Time.deltaTime;
+
+        if (transform.position.x < -15f) Destroy(gameObject);
     }
 }

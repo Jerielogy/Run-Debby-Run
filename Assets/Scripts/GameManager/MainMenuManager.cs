@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // Make sure your game scene is named "Game"
         // or "Region1-Level1"
-        SceneTransitionManager.Instance.LoadScene("Map_Experimental");
+        SceneTransitionManager.Instance.LoadScene("ModeSelection");
     }
 
     // This function is for your "Options" button

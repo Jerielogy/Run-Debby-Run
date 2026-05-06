@@ -6625,7 +6625,7 @@ MonoBehaviour:
     yOffset: 0
     sortingOrder: -9
   - name: Mountain
-    layerSprite: {fileID: 21300000, guid: 7871be04dd318ba4aafcd7fecf85ad8a, type: 3}
+    layerSprite: {fileID: 21300000, guid: cadc08991ab7cf44bb52037be18eb916, type: 3}
     parallaxFactor: 0.15
     yOffset: 0.3
     sortingOrder: -6

@@ -6819,9 +6819,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region IV-B, also called MIMAROPA, is a group of beautiful islands in
-        the Philippines. It is known for its clear beaches, forests, and amazing
-        wildlife.
+      value: Despite its name, the Palawan Flying Fox is actually a large fruit bat.
+        Its wingspan closer to 4 feet.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

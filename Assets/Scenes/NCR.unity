@@ -6674,9 +6674,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: NCR, also called Metro Manila, is the capital region of the Philippines.
-        It is where many big cities, buildings, schools, and businesses are found.
-        It is the busiest and most populated part of the country.
+      value: "The Aspin is a resilient and loyal dog famous in the country. The name
+        \"Aspin\" stand for  \u201CAsong Pinoy\u201D."
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

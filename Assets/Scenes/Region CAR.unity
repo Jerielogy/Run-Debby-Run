@@ -4962,9 +4962,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: The Cordillera Administrative Region (CAR) is a cool, mountainous place
-        in the northern Philippines. It is known for its rice terraces, forests,
-        and strong cultural traditions of the people who live there.
+      value: The Asian Palm Civet is famous for its role in producing one of the
+        world's most expensive coffees. This coffee is known as "Kopi Luwak".
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

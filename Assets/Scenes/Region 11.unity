@@ -8140,9 +8140,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region XI, also called the Davao Region, is in the southeastern part
-        of Mindanao in the Philippines. It is known for Mount Apo, the tallest mountain
-        in the country, and for growing fruits like durian, mango, and bananas.
+      value: The Oriental Darter is a bird often called the "Snakebird" because of
+        its long, thin neck. It hunts by skewering fish with its sharp beak like
+        a spear.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

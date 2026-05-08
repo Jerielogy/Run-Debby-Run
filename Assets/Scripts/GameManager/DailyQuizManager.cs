@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using System.Collections.Generic;
 
 public class DailyQuizManager : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class DailyQuizManager : MonoBehaviour
 
     [Header("Result Section")]
     public GameObject resultSection;
-    public TextMeshProUGUI resultTitle; // Just "CORRECT!" or "WRONG!"
+    public TextMeshProUGUI resultTitle;
 
     [Header("Data")]
     public QuestionData[] questionBank;
@@ -34,11 +35,34 @@ public class DailyQuizManager : MonoBehaviour
             return;
         }
 
+        List<QuestionData> unlockedQuestions = new List<QuestionData>();
+
+        // We check 'LuzonProgress' which is saved in your GameManager
+        int currentLuzonProgress = PlayerPrefs.GetInt("LuzonProgress", 0);
+
+        // Question 1: Requires Region 1 Finished (Index 1)
+        if (currentLuzonProgress >= 1 && questionBank.Length > 0)
+            unlockedQuestions.Add(questionBank[0]);
+
+        // Question 2: Requires Region CAR Finished (Index 2)
+        if (currentLuzonProgress >= 2 && questionBank.Length > 1)
+            unlockedQuestions.Add(questionBank[1]);
+
+        // Question 3: Requires Region 2 Finished (Index 3)
+        if (currentLuzonProgress >= 3 && questionBank.Length > 2)
+            unlockedQuestions.Add(questionBank[2]);
+
+        if (unlockedQuestions.Count == 0)
+        {
+            Debug.Log("No questions unlocked! Finish Luzon levels first.");
+            return;
+        }
+
         dailyPanel.SetActive(true);
         resultSection.SetActive(false);
 
-        int randomIndex = UnityEngine.Random.Range(0, questionBank.Length);
-        currentQuestion = questionBank[randomIndex];
+        int randomIndex = UnityEngine.Random.Range(0, unlockedQuestions.Count);
+        currentQuestion = unlockedQuestions[randomIndex];
 
         questionText.text = currentQuestion.questionText;
         optionAText.text = currentQuestion.optionA;
@@ -48,24 +72,19 @@ public class DailyQuizManager : MonoBehaviour
     public void SubmitAnswer(int index)
     {
         bool isCorrect = (index == currentQuestion.correctIndex);
-
         resultSection.SetActive(true);
 
         if (isCorrect)
         {
             resultTitle.text = "<color=white>CORRECT!</color>";
-
             if (currentQuestion.exclusivePhoto != null)
             {
                 currentQuestion.exclusivePhoto.Unlock();
-                Debug.Log("Unlocked Exclusive Photo");
             }
-
             PlayerPrefs.SetString(LAST_PLAYED_KEY, DateTime.Now.ToString("yyyy-MM-dd"));
         }
         else
         {
-            // Just show WRONG, no explanation
             resultTitle.text = "<color=black>WRONG!</color>";
         }
     }

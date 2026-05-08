@@ -7442,9 +7442,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region VII, also called Central Visayas, is located in the middle of
-        the Philippines. It has beautiful islands, beaches, and famous places where
-        tourists love to visit and enjoy the sea.
+      value: The Dolphin is famous for its acrobatic displays, often spinning high
+        above the waves. They perform these incredible 7-turn rotations to talk to
+        their pod.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

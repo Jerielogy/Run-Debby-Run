@@ -8192,9 +8192,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: BARMM is an autonomous region in the southern part of the Philippines.
-        It is made up of several provinces and is known for its rich culture, traditions,
-        and strong sense of community among the Bangsamoro people.
+      value: The Tawi-Tawi Brown Dove is one of the rarest birds in the Philippines.
+        This shy bird spend most of its time walking on the forest floor.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

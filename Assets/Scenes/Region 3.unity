@@ -7635,10 +7635,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: "Region III, also called Central Luzon, is a wide area in the Philippines
-        known as the \u201CRice Grannary of the Philippines\u201D because it grows
-        a lot of rice. It has farms, rivers, and important cities where many people
-        live and work."
+      value: This Philippine Serpent-Eagle is a specialized hunter that mainly eats
+        snakes. It protect its legs from venomous bites using thick, scaly skin.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

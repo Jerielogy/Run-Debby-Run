@@ -8006,9 +8006,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region II, also called Cagayan Valley, is a big farming area in the
-        northern Philippines. It has wide valleys, rivers, and mountains where people
-        grow rice and corn.
+      value: The Batanes Reed Warbler is a tiny songbird that lives only on the northernmost
+        islands of the Philippines. It prefers to live in windy grasslands.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

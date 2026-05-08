@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b93c9cc090c64c49b702dda61e1d3bf, type: 3}
   m_Name: Question_05
   m_EditorClassIdentifier: 
-  questionText: Unlike most rats that look for grain or cheese, the Lowland Stripe-backed
-    Shrew Rat has a very specific diet. Does it prefer to eat earthworms or tropical
-    fruits?
-  optionA: Earthworms
-  optionB: Tropical fruits
+  questionText: Unlike most pigs that eat many kinds of food, the Philippine Warty
+    Pig has a favorite snack in the wild. Does it prefer to eat roots and fallen
+    fruits or small fish from rivers?
+  optionA: Roots and Fallen Fruits
+  optionB: Small Fish from Rivers
   correctIndex: 0
   triviaFact: 
   exclusivePhoto: {fileID: 0}

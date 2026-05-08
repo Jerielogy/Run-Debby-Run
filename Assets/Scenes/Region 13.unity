@@ -7748,11 +7748,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: 'Region XIII, also called Caraga, is in the northeastern part of Mindanao
-        in the Philippines. It is known for its rich forests, rivers, and gold mining
-        areas, and it also has beautiful natural parks and wildlife.
-
-'
+      value: Catfish are famous for their long "whiskers" that help them find food
+        in dark, muddy water. It is true that their entire bodies are covered in
+        tiny taste buds.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

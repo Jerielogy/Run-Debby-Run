@@ -6841,9 +6841,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region VI, also called Western Visayas, is a group of islands in the
-        Philippines. It is known for its beautiful beaches, friendly people, and
-        tasty food like seafood and sweet delicacies.
+      value: The Manta Ray is a brilliant "brainiac" of the fish world that glides
+        like an underwater bird. It is actually a harmless giant.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

@@ -8426,9 +8426,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region XII, also called SOCCSKSARGEN, is in the southern part of Mindanao
-        in the Philippines. It is known for its farms, lakes, and fishing areas,
-        and it grows crops like corn, rice, and fruits.
+      value: The Philippine Flying Lemur is a master of the rainforest canopy. It
+        glides from tree to tree like a parachute.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

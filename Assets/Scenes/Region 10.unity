@@ -8282,9 +8282,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region X, also called Northern Mindanao, is in the northern part of
-        Mindanao in the Philippines. It is known for rich farms, rivers, and waterfalls,
-        and it produces crops like pineapple, corn, and rice.
+      value: The Mindanao Gymnure is a small mammal that looks like a hedgehog without
+        quills. To keep predators away, it uses a stinky smell like rotten garlic.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

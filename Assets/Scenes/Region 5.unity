@@ -5433,9 +5433,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region V, also called the Bicol Region, is in the southern part of Luzon
-        in the Philippines. It is known for its beautiful volcano, tasty spicy food,
-        and strong people who often face typhoons.
+      value: This Bicol Narrow-mouthed Frog is found in Southern Luzon and makes
+        a surprisingly loud sound. It makes itself look bigger by inflating its body
+        like a balloon.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

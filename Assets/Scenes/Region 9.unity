@@ -5640,9 +5640,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region IX, also called the Zamboanga Peninsula, is in the western part
-        of Mindanao in the Philippines. It is known for its colorful culture, beautiful
-        beaches, and rich marine life.
+      value: The Whale Shark is the largest fish in the sea, but it only eats tiny
+        plankton. Each shark have a unique pattern of spots like a fingerprint.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

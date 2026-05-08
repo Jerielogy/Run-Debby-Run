@@ -7399,9 +7399,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region VIII, also called Eastern Visayas, is located in the eastern
-        part of the Philippines. It has many islands, strong winds, and beautiful
-        nature, and it is often affected by typhoons but known for resilient people.
+      value: Hidden in rocky cracks, the Eel uses a secret second set of "alien"
+        jaws to eat. These inner jaws spring forward to grab prey.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

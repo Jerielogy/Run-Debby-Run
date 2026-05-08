@@ -8169,9 +8169,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: The Negros Island Region (NIR) used to be a region in the Philippines
-        that combined Negros Occidental and Negros Oriental, along with Siquijor.
-        It is known for sugarcane farms, mountains, and beautiful nature.
+      value: The Sea Turtle is a master of navigation that can cross entire oceans
+        without getting lost. Sea turtles find their way back home by sensing the
+        Earth's magnetic field.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle

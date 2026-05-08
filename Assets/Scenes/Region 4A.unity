@@ -7465,6 +7465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelCompletePanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4376655464066701615, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4915634961418202697, guid: 479d7369f965e40489ddc48ee6040796, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7732,9 +7736,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: information
-      value: Region IV-A, also called CALABARZON, is a busy and developed area near
-        Metro Manila in the Philippines. It has many factories, farms, and beautiful
-        places like mountains and lakes.
+      value: Unlike most pigs that eat many kinds of food, the Philippine Warty Pig
+        has a favorite snack in the wild. It prefers to eat roots and fallen fruits.
       objectReference: {fileID: 0}
     - target: {fileID: 901092179377901403, guid: ee04dc68973eb404083277115e3e079f, type: 3}
       propertyPath: regionTitle
